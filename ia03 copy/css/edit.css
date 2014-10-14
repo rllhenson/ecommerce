@@ -475,6 +475,59 @@
 
 
 
+/*Sign In Stuff*/
+.signinimage{
+	width: 100%;
+	background-image: url(../img/carpetbackground.jpg);
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	display: inline-block;
+
+
+}
+
+#textbox button{
+	margin: 0 0 0 20px;
+	margin-top: 2.5%;
+	width: 50%;
+	text-align: center;
+	display: inline-block;
+	padding: 10px 10px 10px 10px;
+	font-family: 'Poiret One', cursive;
+	background-color: #32373a;
+	color:white;
+	border:none;
+	font-size: 1.2em;
+
+}
+#textbox {
+    
+}
+form input[type="text"],
+form input[type="password"] {
+    height: 50px;
+    width: 270px;
+    outline: 0;
+}
+form input[type="text"] {
+    border-radius: 10px 10px 10px 10px;
+    border: 1px solid #ccc;
+    margin: 30px 0 0 20px;
+    font-size: 1em;
+    color: #32373a;
+   font-family: 'Poiret One', cursive;
+    padding: 0 0 0 10px;
+}
+form input[type="password"] {
+    border-radius: 10px 10px 10px 10px;
+    border: 1px solid #ccc;
+    margin: 0 0 0 20px;
+    font-size: 1em;
+   font-family: 'Poiret One', cursive;
+    color: #32373a;
+    padding: 0 0 0 10px;
+  
+}
 
 
 
@@ -613,6 +666,8 @@
 
 
 }
+
+
 #clientcontent{
 	padding: 2.5%;
 	width: 85%;
@@ -626,6 +681,7 @@
 
 }
 
+
 #clientcontent h2{
 	font-size: 2em;
 	color: #32373a;
@@ -633,6 +689,14 @@
 
 }
 
+
+#clientcontent h4{
+	font-size: 1.5em;
+	color: #32373a;
+	font-family: 'Poiret One', cursive;
+
+
+}
 #clientcontent hr{
 	border:0;
 	height: 1px;
@@ -662,6 +726,10 @@
 	color:white;
 	border:none;
 	font-size: 1.2em;
+
+}
+
+
 
 }
 #clientDesc{
