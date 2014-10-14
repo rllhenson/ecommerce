@@ -28,9 +28,11 @@
 				</div>
 				<div class="search">
 				<!-- eventually this will be in a form -->
-					<input type="text" name="sitesearch">
+				<form  method="post" action="search.php"  id="searchform"> 
+					<input type="text" name="searchinput" placeholder="search products">
 					<!-- for button I'll need form=form id of the form search is in -->
-	  				<button type="submit"><img src="img/search.png" alt="magnifying glass" width="26" height="26"/></button>
+					<button type="submit" name="searchbutton"><img src="img/search.png" alt="magnifying glass" width="26" height="26"/></button>
+				</form>
 				</div>
 			</div>
 		</div>
