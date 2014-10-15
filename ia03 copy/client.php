@@ -66,10 +66,8 @@
 					<input class="tinyline" type="text" value="90245-5012">
 					<h4>Email</h4>
 					<input class="fullline" type="email" value="555puksatawnyman@gmail.com">
-					<h4>Card Info</h4>
-					<input class="cardone" type="text" value="XXXX-XXXX-XXXX-2368">
-					<input class="cardtwo" type="text" value="06/84">
 					<button type="button">Edit Information</button>
+					<button type="button">Sign Out</button>
 					
 				</div>
 			</div>
