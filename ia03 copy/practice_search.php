@@ -678,7 +678,7 @@
 
 
 
-				$mysqli = new mysqli("localhost", 'root', 'root', 'ecommerce');
+				$mysqli = new mysqli("sulley.cah.ucf.edu", 'ra072140', 'amilu91', 'ra072140');
 
 				$errnum=mysqli_connect_errno();
 				if ($errnum) 
