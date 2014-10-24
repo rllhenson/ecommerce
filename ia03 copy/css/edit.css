@@ -680,12 +680,14 @@ form input[type="password"] {
 	
 
 }
-.priceitem{
-	width: 25%;
+
+#priceitem{
+	width: 50%;
 	display: inline-block;
 	vertical-align: top;
 	font-size: 1.2em;
 }
+
 .cartitem select{
 	margin: 0 auto;
 	width: 15%;
@@ -1008,6 +1010,11 @@ form input[type="password"] {
 	text-align: left;
 	padding: 5%;
 
+}
+
+.customerreview hr{
+	width:95%;
+	margin-left: 0px; 
 }
 
 .customerreview img{
