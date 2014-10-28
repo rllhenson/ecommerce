@@ -943,6 +943,22 @@ form input[type="password"] {
 }
 
 
+input[type=submit] {
+
+	margin-top: 5%;
+	margin-left: 10%;
+	margin-bottom: 5%;
+	width: 30%;
+	text-align: center;
+	display: inline-block;
+	padding: 2%;
+	font-family: 'Poiret One', cursive;
+	background-color: #32373a;
+	color:white;
+	border:none;
+	font-size: 1.2em;}
+	</style>
+
 #productcontent button{
 	margin-left: 65%;
 	margin-bottom: 5%;
