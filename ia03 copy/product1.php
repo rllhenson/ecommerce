@@ -6,6 +6,7 @@
 	error_reporting(E_ALL);
 ?>
 
+
 		<div class="productimage">
 			<div id="productcontent">
 				<div class="tablehead">
@@ -208,7 +209,7 @@
 							?>
 					</p>
 				</div>
-				<div class="review">
+				<div id="review">
 					<p>Write a review</p>
 					<div class="rating">
 						<span onclick="star1()">☆</span>
@@ -216,12 +217,15 @@
 						<span onclick="star3()">☆</span>
 						<span onclick="star4()">☆</span>
 					</div>
-					<form action="none" name="review">
+					<form action="#" name="submitreview" method="post">
 						<textarea name="writereview" placeholder="Write your review here">
 						</textarea>
+						<button type="button" onClick="submitForm(this.submitreview)">Submit</button>
 					</form>
 				</div>
-				<button class="reviewbutton" type="button" onclick="">Submit</button>
+				<div id="reviewsent">
+					<p>Thank you, your review has been submitted. It will be posted after approval.</p>
+				</div>
 			</div>
 		</div>
 
@@ -231,3 +235,4 @@
 <?php 
 	include 'includes/footer.php'; 
 ?>
+
