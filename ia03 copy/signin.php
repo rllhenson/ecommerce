@@ -12,12 +12,12 @@
 				<br>
 				<h4>Don't have an account? <a href="signup.php">Sign Up</a>.</h4>
 				<br><br>
-				<div id="topbar">
-	    			<div id="titlebox">
+				<div class="topbar">
+	    			<div class="titlebox">
 	        			<h2>Admin Login</h2>
 	        			<br>
 	    			</div>    
-	    			<div id="textbox">
+	    			<div class="textbox">
 				        <form action="admin.php">                
 				            <input type="text" name="adminname" placeholder="Username" />
 				            <input type="password" name="adminpass" nameplaceholder="Password" />
@@ -26,13 +26,13 @@
 				  	</div>
 				 </div>
 
-		    	<div id="topbar">
-				    <div id="titlebox">
+		    	<div class="topbar">
+				    <div class="titlebox">
 				        <br><br>
 				    	<h2>Customer Login<h2>
 				    	<br>
 				    </div>    
-		    		<div id="textbox">
+		    		<div class="textbox">
 				        <form action="client.php">             
 				            <input type="text" name="user" placeholder="Username" />
 				            <input type="password" name="pass" placeholder="Password" />  
