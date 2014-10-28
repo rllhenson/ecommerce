@@ -5,7 +5,7 @@
 
 	<div class="footer">
 		<p>This site is not official and is an assignment for a UCF Digital Media Course.</p>
-		<p>Designed by Rachel Loveland</p>
+		<p>Designed by Group 4</p>
 	</div>
 </body>
 
