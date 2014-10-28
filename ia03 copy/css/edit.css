@@ -59,7 +59,7 @@
 	display: inline-block;
 }*/
 
-.log_search{
+.log_search {
 	width: 100%;
 	display: inline-block;
 	text-align: right;
@@ -1002,8 +1002,9 @@ input[type=submit] {
 	background-color: #32373a;
 	color:white;
 	border:none;
-	font-size: 1.2em;}
-	</style>
+	font-size: 1.2em;
+}
+
 
 #productcontent button{
 	margin-left: 65%;
