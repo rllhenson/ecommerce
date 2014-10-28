@@ -59,7 +59,7 @@
 	display: inline-block;
 }*/
 
-.log_search{
+.log_search {
 	width: 100%;
 	display: inline-block;
 	text-align: right;
@@ -985,6 +985,23 @@ form input[type="password"] {
 	margin-top: -10%;
 	display: inline-block;
 	vertical-align: top;
+	font-size: 1.2em;
+}
+
+
+input[type=submit] {
+
+	margin-top: 5%;
+	margin-left: 10%;
+	margin-bottom: 5%;
+	width: 30%;
+	text-align: center;
+	display: inline-block;
+	padding: 2%;
+	font-family: 'Poiret One', cursive;
+	background-color: #32373a;
+	color:white;
+	border:none;
 	font-size: 1.2em;
 }
 
