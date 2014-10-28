@@ -1,64 +1,19 @@
-
-<!DOCTYPE html>
-<html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
-	<title>Floor5 Catalog - Rachel Loveland</title>
-
-	<link rel="stylesheet" href="css/reset.css"/>
-	<link rel="stylesheet" href="css/edit.css"/>
-</head>
-
-<body>
-	<form  action='practice_search.php' method='post'>
-
-	 	<div class="gutter"></div>
-		<div class="header">
-			<div class="logo">
-				<img src="img/logo1.png" alt="Floor Five Interior Designs"/>
-			</div>
-
-			<div class="space_between_logo">
-				<!-- <p>&nbsp;</p> -->
-			</div>
-
-			<div class="log_search">
-				<div class="log">
-					<a href="http://sulley.cah.ucf.edu/~ra072140/dig4530c/assignments/ia03/client.php"><h4>view account</h4></a><p>/</p><a href="http://sulley.cah.ucf.edu/~ra072140/dig4530c/assignments/ia03/cart.php"><h4>view cart</h4></a>
-				</div>
-				<div class="search">
-				<!-- eventually this will be in a form -->
-					<input type="text" name="sitesearch" autocomplete="off" placeholder="search products">
-					<!-- for button I'll need form=form id of the form search is in -->
-	  				<!-- <button type="submit" name="submitsearch">
-	  					<img src="img/search.png" name="searchimg" alt="magnifying glass" width="26" height="26" name=""/>
-	  				</button> -->
-	  				<input type='submit' name='action' value='Search'>
-				</div>
-			</div>
-		</div>
-		<div class="gutter"></div>
-
-
-		<div class="content">
-
-			<div class="nav">
-				<ul>
-					<li><a href="http://sulley.cah.ucf.edu/~ra072140/dig4530c/assignments/ia03/home.php">home</a></li>
-					<li><a href="http://sulley.cah.ucf.edu/~ra072140/dig4530c/assignments/ia03/about.html">about</a></li>
-					<li><a href="http://sulley.cah.ucf.edu/~ra072140/dig4530c/assignments/ia03/catalog.php">catalog</a></li>
-					<li class="contact" ><a href="http://sulley.cah.ucf.edu/~ra072140/dig4530c/assignments/ia03/contact.html">contact</a></li>
-				</ul>
-
-			</div>
+<?php 
+	$pageTitle='FloorFive Catalog';
+	include 'includes/header.php';
+	include 'includes/connect_to_mysql.php';
+	session_start(); 
+	error_reporting(E_ALL);
+?>
 
 		
 			<div class='catalogcontent'>
 				<div id='catalog'>
-					<div class='orderby'><h2>Order by Category</h2><hr><input type='submit' name='action' value='floral'><input type='submit' name='action' value='modern'><input type='submit' name='action' value='traditional'><input type='submit' name='action' value='shag'></div>
-					<div class='orderby'><h2>Order by Color</h2><hr><input type='submit' name='action' value='red'><input type='submit' name='action' value='orange'><input type='submit' name='action' value='yellow'><input type='submit' name='action' value='green'><input type='submit' name='action' value='blue'><input type='submit' name='action' value='purple'></div>
-					<div class='orderby'><h2>Order by Size</h2><hr><input type='submit' name='action' value="4' x 4'"><input type='submit' name='action' value="5' x 5'"><input type='submit' name='action' value="6' x 4'"></div>
+					<form method="post" action="">
+						<div class='orderby'><h2>Order by Category</h2><hr><input type='submit' name='action' value='floral'><input type='submit' name='action' value='modern'><input type='submit' name='action' value='traditional'><input type='submit' name='action' value='shag'></div>
+						<div class='orderby'><h2>Order by Color</h2><hr><input type='submit' name='action' value='red'><input type='submit' name='action' value='orange'><input type='submit' name='action' value='yellow'><input type='submit' name='action' value='green'><input type='submit' name='action' value='blue'><input type='submit' name='action' value='purple'></div>
+						<div class='orderby'><h2>Order by Size</h2><hr><input type='submit' name='action' value="4' x 4'"><input type='submit' name='action' value="5' x 5'"><input type='submit' name='action' value="6' x 4'"></div>
+					</form>
 				</div>
 			</div>
 			
@@ -93,7 +48,7 @@
 
 						$trimterm = trim($sterms);
 
-						$myquery="SELECT name,price,prodimg,size,stock FROM `products` 
+						$myquery="SELECT name,price,productid,prodimg,size,stock FROM `products` 
 						WHERE `description` LIKE '%{$trimterm}%' 
 						OR `category` LIKE '%{$trimterm}%' 
 						OR `name` LIKE '%{$trimterm}%' 
@@ -116,7 +71,7 @@
 								$num=0;
 								while ($row=$result->fetch_assoc())
 								{	
-
+									$id=$row['productid'];
 									$prodname=$row['name'];
 									$price=$row['price'];
 									$img=$row['prodimg'];
@@ -130,12 +85,22 @@
 									$num++;
 									
 									
-									print "<div class='catalog_item'>
-												<div class='catalog_img'><img src='img/".$img."' alt='image of featured product'></div>
-												<div class='catalog_desc'><img src='img/stars.png' alt='quality rating system'><p class='name'>".$prodname."</p><p>".$size."</p><p>$".$price."</p>
-												<button type='button' disabled>ADD TO CART</button>
+									print "
+							            <form method='post' action='cart1.php'>
+											<div class='catalog_item'>
+												<div class='catalog_img'>
+													<img src='img/".$img."' alt='image of featured product'>
 												</div>
-											</div>";
+												<div class='catalog_desc'>
+													<img src='img/stars.png' alt='quality rating system'>
+													<p class='name'>".$prodname."</p>
+													<p>".$size."</p>
+													<p>$".$price."</p>
+													<input type='hidden' name='pid' id='pid' value='$id' />
+													<input type='submit' value='ADD TO CART'>
+												</div>
+											</div>
+										</form>";
 
 
 								}
@@ -174,12 +139,27 @@
 							$num++;
 							
 							
-							print "<div class='catalog_item'>
-										<div class='catalog_img'><img src='img/".$img."' alt='image of featured product'></div>
-										<div class='catalog_desc'><img src='img/stars.png' alt='quality rating system'><p class='name'>".$prodname."</p><p>".$size."</p><p>$".$price."</p>
-										<button type='button' disabled>ADD TO CART</button>
-										</div>
-									</div>";
+							print "
+							    <form method='post' action='cart1.php'>
+					              <div class='catalog_item'>
+					                <div class='catalog_img'>
+					                  <img src='img/".$img."' alt='image of featured product'></div>
+					                  <div class='catalog_desc'>
+					                  <img src='img/stars.png' alt='quality rating system'>
+					                  <p class='name'>".$prodname."</p>
+					                  <p>".$size."</p>
+					                  <p>$".$price."</p>
+					                  <input type='hidden' name='pid' id='pid' value='$id' />
+					                  <input type='submit' value='ADD TO CART' />
+					                </div>
+					              </div>
+					            </form>";
+							// <div class='catalog_item'>
+							// 			<div class='catalog_img'><img src='img/".$img."' alt='image of featured product'></div>
+							// 			<div class='catalog_desc'><img src='img/stars.png' alt='quality rating system'><p class='name'>".$prodname."</p><p>".$size."</p><p>$".$price."</p>
+							// 			<button type='button' disabled>ADD TO CART</button>
+							// 			</div>
+							// 		</div>";
 
 
 						}
@@ -766,20 +746,6 @@
 				}
 			?>
 		</div>
-
-		<div class="sitelink">
-			<h4>terms and conditions</h4>
-		</div>
-
-
-		<div class="footer">
-			<p>This site is not official and is an assignment for a UCF Digital Media Course.</p>
-			<p>Designed by Rachel Loveland</p>
-		</div>
-
-
-		
-	</form>
-</body>
-
-</html>
+<?php 
+	include 'includes/footer.php'; 
+?>

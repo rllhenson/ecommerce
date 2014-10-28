@@ -19,8 +19,6 @@
 	font-family: 'Poiret One', cursive;
 	color: #32373a;
 	display: inline-block;
-
-
 }
 
 .header button{
@@ -48,22 +46,22 @@
 .logo{
 	width: 25%;
 	display: inline-block;
+/*	float: left;*/
 
 }
 
 .logo img{
 	width: 100%;
 }
-
+/*
 .space_between_logo{
 	width: 43%;
 	display: inline-block;
-}
+}*/
 
 .log_search{
-	width: 30%;
+	width: 100%;
 	display: inline-block;
-	vertical-align: top;
 	text-align: right;
 }
  
@@ -79,21 +77,43 @@
 	padding-left: 2%;
 }
 
-.log,.search{
+.log{
 	width: 100%;
 	margin-top:5%;
-
+}
+.search{
+	width: 100%;
+	margin-top:5%;
 }
 
 
-.search input[type="text"] {
-    height: 20px;
+.search {
     vertical-align: top;
 }
 
-
-
-
+form{
+	display: inline-block;
+/*	float:right;*/
+}
+.header input[type="submit"]{
+	padding: 2%;
+	font-family: 'Poiret One', cursive;
+	background-color: rgba(225,225,225,.8);
+	color:#32373a;
+	border:none;
+	font-size: .8em;
+	width: 10%;
+	text-align: center;
+	display: inline-block;
+	margin: 0 auto;
+	margin-top: 2%;
+}
+.header form input[type="text"]{
+    height: 20px;
+    vertical-align: top;
+    width: 50%;
+    outline: 0;
+}
 
 
 
@@ -482,6 +502,19 @@
 	font-size: 2em;
 	margin-top: 2%;
 	margin-bottom: 2%;
+}
+
+.catalog_item{
+	font-family: 'Poiret One', cursive;
+	color:#32373a;
+	width: 20%;
+	display: inline-block;
+	padding: 2.5%;
+/*	text-align: left;*/
+	/*background: -webkit-linear-gradient(left, #EAEBEB , white); 
+	background: -o-linear-gradient(right, #EAEBEB, white); 
+	background: -moz-linear-gradient(right, #EAEBEB, white); 
+	background: linear-gradient(to right, #EAEBEB , white);*/
 }
 .catalog_item{
 	font-family: 'Poiret One', cursive;
