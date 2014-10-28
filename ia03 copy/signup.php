@@ -12,7 +12,7 @@
 				<div id="topbar">
     		 
     			<div id="textbox">
-			        <form action="">               
+			        <form>                
 			            <input type="text" name="fname" placeholder="First Name" />
 			            <input type="text" name="lname" placeholder="Last Name" />
 			            <input type="text" name="add" placeholder="Address" />
@@ -20,8 +20,11 @@
 			            <input type="text" name="state" placeholder="State" />
 			            <input type="text" name="zip" placeholder="Zip Code" />
 			            <input type="text" name="email" placeholder="Email" />
-			            <input type="password" name="password" placeholder="Create a Password" />
-			           <input type="submit" value="Create Account"/>	
+			            <input type="text" name="pass" placeholder="Create a Password" />
+			           
+
+			            <a href="#"><center><button type="button">Create Account</button></center></a>
+
 			        </form>
 			  </div>
 
