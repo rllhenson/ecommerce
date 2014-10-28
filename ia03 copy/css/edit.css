@@ -984,7 +984,7 @@ form input[type="password"] {
 	display: inline-block;
 }
 
-.review{
+#review{
 	font-family: 'Poiret One', cursive;
 	color: white;
 	text-shadow: 1px 1px 1px #32373a;
@@ -995,9 +995,25 @@ form input[type="password"] {
 	padding: 5%;
 }
 
-.review p{
+#review p{
 	display: inline-block;
 	padding-right: 5%;
+}
+
+#review button{
+
+	margin: 0 0 0 64%;
+	margin-top: 2%;
+	width: 30%;
+
+	text-align: center;
+	display: inline-block;
+	padding: 10px 10px 10px 10px;
+	font-family: 'Poiret One', cursive;
+	background-color: #32373a;
+	color:white;
+	border:none;
+	font-size: 26px;
 }
 
 .customerreview{
@@ -1036,13 +1052,13 @@ form input[type="password"] {
 	font-size: 25px;
 }
 
-.review form{
+#review form{
 	display: block;
 	padding-top: 2%;
 	width: 100%;
 }
 
-.review textarea{
+#review textarea{
 	width: 94%;
 	height: 120px;
 	border: 3px solid #666666;
@@ -1075,6 +1091,19 @@ form input[type="password"] {
   display: inline-block;
   position: relative;
   font-size: 50px;
+
+}
+
+#reviewsent{
+	display: none;
+	width: 100%;
+	margin-left: 4%;
+	text-align: left;
+	padding: 1%;
+	font-family: 'Poiret One', cursive;
+	color:white;
+	border:none;
+	font-size: 1.7em;
 
 }
 
