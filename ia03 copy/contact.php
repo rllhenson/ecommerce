@@ -8,7 +8,7 @@
 
 			<div class="contactimage">
 				<div id="contactcontent">
-					<img src="img/phonerug.jpg" alt="red telephone box rug">
+					<img src="img/header_rug.jpg" alt="contact header image">
 					<div id="soveryclose">
 						<h4>Name</h4>
 						<input type="text">
@@ -36,7 +36,7 @@
 			<p>Mon-Fri<br/>8am-5pm</p>
 			<br/>
 			<p>(310) 576-6466</p>
-			<img src="img/storefront_ny.jpg" alt="California location's storefront">
+			<img src="img/cali_store.jpg" alt="California location's storefront">
 			<button type="button">Get Directions</button>
 		</div>
 		<div class="onelocation">
@@ -58,7 +58,7 @@
 			<p>Mon-Fri<br/>11am-7pm</p>
 			<br/>
 			<p>(407) 823-2000</p>
-			<img src="img/storefront_ny.jpg" alt="Orlando location's storefront">
+			<img src="img/florida_store.jpg" alt="Orlando location's storefront">
 			<button type="button">Get Directions</button>
 		</div>
 	</div>

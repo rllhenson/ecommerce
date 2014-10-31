@@ -1451,7 +1451,7 @@ input[type=submit] {
 /*contact stuff*/
 .contactimage{
 	width: 100%;
-	background-image: url(../img/redwhite.jpg);
+	background-image: url(../img/contact.jpg);
 	background-repeat: repeat;
 	background-position: 50% 35%;
 	display: inline-block;
