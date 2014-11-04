@@ -379,6 +379,11 @@ form{
 
 }
 
+#whatnot p{
+	margin:5%;
+
+}
+
 #grouppic{
 	padding: 2.5%;
 	width: 30%;
@@ -414,6 +419,7 @@ form{
 	padding-top: 5%;
 	padding-bottom: 5%;
 	font-size: 1em;
+	margin:5%;
 }
 
 .human img{
@@ -425,13 +431,12 @@ form{
 
 .human a{
 /*	margin-left: 70%;*/
-	margin: 15%;
 	padding: 5%;
 	font-family: 'Poiret One', cursive;
 	background-color: white;
 	color:#32373a;
 	border:none;
-	font-size: 1.2em;
+	font-size: 1em;
 	width: 100%;
 	text-decoration:none;
 }
@@ -446,6 +451,9 @@ form{
 	font-size: 1.2em;
 	width: 100%;
 	text-decoration:none;
+	margin-top:15%;
+	margin-left:30%;
+	margin-right:30%;
 
 }
 
