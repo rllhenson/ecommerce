@@ -53,11 +53,11 @@
 .logo img{
 	width: 100%;
 }
-/*
+
 .space_between_logo{
-	width: 43%;
+	width: 35%;
 	display: inline-block;
-}*/
+}
 
 .log_search {
 	width: 100%;
@@ -93,7 +93,7 @@
 
 form{
 	display: inline-block;
-/*	float:right;*/
+	float:right;
 }
 .header input[type="submit"]{
 	padding: 2%;
@@ -1666,8 +1666,14 @@ input[type=submit] {
 	}
 
 	.space_between_logo{
-		width: 5%;
+		width: 1%;
 		display: inline-block;
+	}
+	
+
+	form{
+		display:inline-block;
+		float:right;
 	}
 
 	.log_search{
@@ -1915,7 +1921,7 @@ input[type=submit] {
 		font-size: 1.2em;
 		width: 100%;
 	}
-
+}
 	
 }
 
