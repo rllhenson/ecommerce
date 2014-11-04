@@ -37,7 +37,9 @@
 			<br/>
 			<p>(310) 576-6466</p>
 			<img src="img/cali_store.jpg" alt="California location's storefront">
-			<button type="button">Get Directions</button>
+			<a href="img/cali_storemap.png" class="lightbox_trigger">
+                	Get Directions
+            </a>
 		</div>
 		<div class="onelocation">
 			<h4>New York Location</h4>
@@ -48,7 +50,9 @@
 			<br/>
 			<p>(646) 467-6665</p>
 			<img src="img/storefront_ny.jpg" alt="New York location's storefront">
-			<button type="button">Get Directions</button>
+			<a href="img/nyc_storemap.png" class="lightbox_trigger">
+                	Get Directions
+            </a>
 		</div>
 		<div class="onelocation">
 			<h4>Florida Location</h4>
@@ -59,11 +63,16 @@
 			<br/>
 			<p>(407) 823-2000</p>
 			<img src="img/florida_store.jpg" alt="Orlando location's storefront">
-			<button type="button">Get Directions</button>
+			<a href="img/fla_storemap.png" class="lightbox_trigger">
+                	Get Directions
+            </a>
 		</div>
 	</div>
 
 	
+	<script src="https://code.jquery.com/jquery-1.6.2.min.js"></script>
+	<script src="js/lightbox_trigger.js"></script>
+
 
 <?php 
 	include 'includes/footer.php'; 
