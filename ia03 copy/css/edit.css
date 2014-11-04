@@ -93,7 +93,7 @@
 
 
 .header input[type="submit"]{
-	padding: 1%;
+	padding: 2%;
 	font-family: 'Poiret One', cursive;
 	background-color: rgba(225,225,225,.8);
 	color:#32373a;
@@ -108,7 +108,7 @@
 .header form input[type="text"]{
     height: 20px;
     vertical-align: top;
-    width: 30%;
+    width: 50%;
     outline: 0;
 }
 
@@ -696,6 +696,22 @@ form input[type="password"] {
 	background: linear-gradient(to bottom, rgba(50,55,58,0.6) 0%, rgba(50,55,58,0.1) 100%); /* Standard syntax */
 
 }
+#cartcontent table {
+	margin: 0 auto;
+	width: 100%;
+	display: inline-block;
+	vertical-align: top;
+	padding: 2%;
+	font-family: 'Poiret One', cursive;
+	color:white;
+	border:none;
+	font-size: 1.2em;
+}
+
+#cartcontent td {
+	padding: 2%;
+}
+
 .tablehead{
 	padding: 2.5%;
 	font-family: 'Poiret One', cursive;
@@ -1027,6 +1043,19 @@ input[type=submit] {
 	font-size: 1.2em;
 }
 
+#quantity {
+	margin-top: -500px;
+	width: 10px;
+	display: none;
+}
+
+.cartoutput input[type="text"]{
+    height: 20px;
+    vertical-align: top;
+    outline: 0;
+	width: 10px;
+	font-size: 10px;
+}
 
 #productcontent button{
 	margin-left: 65%;
