@@ -14,15 +14,18 @@
 
 	<div class="gutter"></div>
 	<div class="header">
-		<div class="logo">
-			<img src="img/logo1.png" alt="Floor Five Interior Designs"/>
-		</div>
+		
 
-		<div class="space_between_logo">
-			<!-- <p>&nbsp;</p> -->
-		</div>
+		
 
 		<form  action='catalog.php' method='post'>
+        <div class="logo">
+			<img src="img/logo1.png" alt="Floor Five Interior Designs"/>
+		</div>
+        
+        <div class="space_between_logo">
+		</div>
+        
 			<div class="log_search">
 				<div class="log">
 					<a href="signin.php"><h4>sign in</h4></a><p>/</p><a href="cart1.php"><h4>view cart</h4></a>

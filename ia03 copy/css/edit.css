@@ -53,14 +53,14 @@
 .logo img{
 	width: 100%;
 }
-/*
+
 .space_between_logo{
-	width: 43%;
+	width: 20%;
 	display: inline-block;
-}*/
+}
 
 .log_search {
-	width: 100%;
+	width: 50%;
 	display: inline-block;
 	text-align: right;
 }
@@ -91,12 +91,9 @@
     vertical-align: top;
 }
 
-form{
-	display: inline-block;
-/*	float:right;*/
-}
+
 .header input[type="submit"]{
-	padding: 2%;
+	padding: 1%;
 	font-family: 'Poiret One', cursive;
 	background-color: rgba(225,225,225,.8);
 	color:#32373a;
@@ -111,9 +108,11 @@ form{
 .header form input[type="text"]{
     height: 20px;
     vertical-align: top;
-    width: 50%;
+    width: 30%;
     outline: 0;
 }
+
+
 
 
 
