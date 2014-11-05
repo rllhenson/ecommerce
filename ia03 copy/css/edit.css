@@ -1043,10 +1043,36 @@ input[type=submit] {
 	font-size: 1.2em;
 }
 
-#quantity {
-	margin-top: -500px;
-	width: 10px;
-	display: none;
+#itemquantity {
+	margin-top: 0px;
+	margin-left: -40px;
+	padding-right: 0px;
+	text-align: left;
+	height: 20px;
+	width: 35px;
+	display: inline-block;
+}
+
+#changebutton {
+	width: 100px;
+	margin-left: 20px;
+	margin-right: -20px;
+	padding-left: 10px;
+	padding-right: 0px;
+	display: inherit;
+	margin-top: -25px;
+}
+
+.cartheader {
+
+	text-align: center;
+	display: inline-block;
+	padding: 2%;
+	font-family: 'Poiret One', cursive;
+	background-color: #32373a;
+	color:white;
+	border:none;
+	font-size: 2em;
 }
 
 .cartoutput input[type="text"]{
@@ -1105,7 +1131,7 @@ input[type=submit] {
 	font-size: 2em;
 	width: 95%;
 	display: block;
-	text-align: left;
+
 	padding: 5%;
 }
 
@@ -1180,32 +1206,14 @@ input[type=submit] {
 
 
 .rating {
-  unicode-bidi: bidi-override;
-  direction: rtl;
 }
 
-.rating > span {
-  display: inline-block;
-  position: relative;
-  font-size: 50px;
-  
+.reviewstar{
+	float: right;
 }
-
-.rating > span:hover:before,
-.rating > span:hover ~ span:before {
-   content: "\2605";
-   position: absolute;
-}
-
 .stars {
 	width: 200%;
 	margin-left: 5%;
-}
-.stars > span {
-  display: inline-block;
-  position: relative;
-  font-size: 50px;
-
 }
 
 #reviewsent{
