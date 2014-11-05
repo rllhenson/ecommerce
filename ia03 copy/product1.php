@@ -1,7 +1,7 @@
 
 <?php 
 	$pageTitle='FloorFive Product Page';
-	include 'includes/header.php';
+	include 'header.php';
 	include 'includes/connect_to_mysql.php';
 	session_start(); 
 	error_reporting(E_ALL);
@@ -213,10 +213,12 @@
 				<div id="review">
 					<p>Write a review</p>
 					<div class="rating">
-						<span onclick="star1()">☆</span>
-						<span onclick="star2()">☆</span>
-						<span onclick="star3()">☆</span>
-						<span onclick="star4()">☆</span>
+						<form action="#">
+							<input type="checkbox" name="1star" value="Hated it"><img src="img/stars1.png" alt="Hated it" /> Hated It<br>
+							<input type="checkbox" name="2star"><img src="img/stars2.png" alt="Disliked it" /> Disliked it<br>
+							<input type="checkbox" name="3star"><img src="img/stars3.png" alt="Liked it" /> Liked it<br>
+							<input type="checkbox" name="4star"><img src="img/stars4.png" alt="Loved it" /> Loved it<br>
+						</form>
 					</div>
 					<form action="#" name="submitreview" method="post">
 						<textarea name="writereview" placeholder="Write your review here">
@@ -225,7 +227,7 @@
 					</form>
 				</div>
 				<div id="reviewsent">
-					<p>Thank you, your review has been submitted. It will be posted after approval.</p>
+					<p>Thank you, your review has been submitted. We are currently processing your review and it will be posted after approval.</p>
 				</div>
 			</div>
 		</div>
