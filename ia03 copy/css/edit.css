@@ -86,12 +86,6 @@
 	margin-top:5%;
 }
 
-
-.search {
-    vertical-align: top;
-}
-
-
 .header input[type="submit"]{
 	padding: 1%;
 	font-family: 'Poiret One', cursive;
@@ -99,17 +93,19 @@
 	color:#32373a;
 	border:none;
 	font-size: .8em;
-	width: 10%;
+	width: 50px;
 	text-align: center;
 	display: inline-block;
 	margin: 0 auto;
 	margin-top: 2%;
 }
 .header form input[type="text"]{
-    height: 20px;
-    vertical-align: top;
+    /*height: 20px;
+   vertical-align: top;*/
     width: 30%;
     outline: 0;
+    margin: 0;
+    height: 20px !important;
 }
 
 
@@ -253,8 +249,8 @@
 	background: linear-gradient(to right, #EAEBEB , white); /* Standard syntax */
 }
 
-.featured_desc button{
-	margin-left: 70%;
+.featured_desc input{
+	/*margin-left: 70%;*/
 	margin-top: 5%;
 	padding: 1%;
 	font-family: 'Poiret One', cursive;
@@ -474,12 +470,13 @@
 	text-align: center;
 	display: inline-block;
 }
-.orderby{
-	padding-left:3%;
+.orderby{/*
+	padding-left:1.5%;
+  padding-right:1.5%;*/
 	padding-top: 2.5%;
 	padding-bottom: 2.5%;
 	font-size: 2em;
-	width: 30%;
+	width: 32%;
 	display: inline-block;
 	vertical-align: top;
 	text-align: center;
@@ -530,19 +527,8 @@
 	color:#32373a;
 	width: 20%;
 	display: inline-block;
-	padding: 2.5%;
-/*	text-align: left;*/
-	/*background: -webkit-linear-gradient(left, #EAEBEB , white); 
-	background: -o-linear-gradient(right, #EAEBEB, white); 
-	background: -moz-linear-gradient(right, #EAEBEB, white); 
-	background: linear-gradient(to right, #EAEBEB , white);*/
-}
-.catalog_item{
-	font-family: 'Poiret One', cursive;
-	color:#32373a;
-	width: 20%;
-	display: inline-block;
-	padding: 2.5%;
+	padding: 2%;
+  vertical-align:bottom;
 /*	text-align: left;*/
 	/*background: -webkit-linear-gradient(left, #EAEBEB , white); 
 	background: -o-linear-gradient(right, #EAEBEB, white); 
@@ -562,7 +548,7 @@
 	font-size: 1.5em;
 	padding-top: 2%;
 }
-.catalog_desc button{
+.catalog_desc input, td form input[type="submit"], #form1 input{
 	margin-top: 10%;
 	padding: 2%;
 	font-family: 'Poiret One', cursive;
@@ -573,7 +559,12 @@
 	width: 100%;
 	display: inline-block;
 }
-
+.catalog_desc p a:link,.catalog_desc p a:visited{
+  color:#000;
+}
+.catalog_desc p a:hover{
+  color:#555555;
+}
 
 
 /*Sign In Stuff*/
@@ -603,8 +594,6 @@
 }
 
 .textbox form input[type=submit] {
-
-
 	margin-bottom: 5%;
 	width: 30%;
 	text-align: center;
@@ -701,7 +690,7 @@ form input[type="password"] {
 	width: 100%;
 	display: inline-block;
 	vertical-align: top;
-	padding: 2%;
+	/*padding: 2%;*/
 	font-family: 'Poiret One', cursive;
 	color:white;
 	border:none;
@@ -709,7 +698,12 @@ form input[type="password"] {
 }
 
 #cartcontent td {
-	padding: 2%;
+	/*padding: 2%;*/
+  vertical-align:top;
+}
+#cartcontent td img{
+  width:120px;
+  height:120px;
 }
 
 .tablehead{
@@ -1026,7 +1020,7 @@ form input[type="password"] {
 	font-size: 1.2em;
 }
 
-
+/*
 input[type=submit] {
 
 	margin-top: 5%;
@@ -1041,38 +1035,12 @@ input[type=submit] {
 	color:white;
 	border:none;
 	font-size: 1.2em;
-}
+}*/
 
-#itemquantity {
-	margin-top: 0px;
-	margin-left: -40px;
-	padding-right: 0px;
-	text-align: left;
-	height: 20px;
-	width: 35px;
-	display: inline-block;
-}
-
-#changebutton {
-	width: 100px;
-	margin-left: 20px;
-	margin-right: -20px;
-	padding-left: 10px;
-	padding-right: 0px;
-	display: inherit;
-	margin-top: -25px;
-}
-
-.cartheader {
-
-	text-align: center;
-	display: inline-block;
-	padding: 2%;
-	font-family: 'Poiret One', cursive;
-	background-color: #32373a;
-	color:white;
-	border:none;
-	font-size: 2em;
+#quantity {
+	margin-top: -500px;
+	width: 10px;
+	display: none;
 }
 
 .cartoutput input[type="text"]{
@@ -1081,6 +1049,10 @@ input[type=submit] {
     outline: 0;
 	width: 10px;
 	font-size: 10px;
+}
+td form input[type="text"]{
+  width:50px;
+  margin:0;
 }
 
 #productcontent button{
@@ -1131,7 +1103,7 @@ input[type=submit] {
 	font-size: 2em;
 	width: 95%;
 	display: block;
-
+	text-align: left;
 	padding: 5%;
 }
 
@@ -1140,7 +1112,7 @@ input[type=submit] {
 	padding-right: 5%;
 }
 
-#review button{
+#review input{
 
 	margin: 0 0 0 64%;
 	margin-top: 2%;
@@ -1206,14 +1178,32 @@ input[type=submit] {
 
 
 .rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
 }
 
-.reviewstar{
-	float: right;
+.rating > span {
+  display: inline-block;
+  position: relative;
+  font-size: 50px;
+  
 }
+
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+}
+
 .stars {
 	width: 200%;
 	margin-left: 5%;
+}
+.stars > span {
+  display: inline-block;
+  position: relative;
+  font-size: 50px;
+
 }
 
 #reviewsent{
@@ -1761,6 +1751,7 @@ input[type=submit] {
 	}
 	
 	/* Home page */
+  /*
 	.featured_item{
 		margin-top:5%;
 		text-align: center;
@@ -1781,7 +1772,7 @@ input[type=submit] {
 		display: inline-block;
 		vertical-align: top;
 		text-align: left;
-	}
+	}*/
 	
 	/*contact stuff*/
 	.contactimage{
