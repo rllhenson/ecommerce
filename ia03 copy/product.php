@@ -94,7 +94,7 @@ $count=$result->num_rows;
 					<form action="#" name="submitreview" method="post">
 						<textarea name="writereview" placeholder="Write your review here">
 						</textarea>
-						<input type="submit" id="submitreview"></input>
+						<button type="button" onClick="submitForm(this.submitreview)">Submit</button>
 					</form>
 				</div>
 				<div id="reviewsent">

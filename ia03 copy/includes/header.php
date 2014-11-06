@@ -7,7 +7,7 @@
 
 	<link rel="stylesheet" href="css/reset.css"/>
 	<link rel="stylesheet" href="css/edit.css"/>
-
+  <script src="process_form.js"></script>
 </head>
 
 <body>
