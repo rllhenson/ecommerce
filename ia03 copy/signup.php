@@ -12,26 +12,23 @@
 				<div id="topbar">
     		 
     			<div id="textbox">
-			        <form>                
+			        <form method="post" action="client.php">             
 			            <input type="text" name="fname" placeholder="First Name" />
 			            <input type="text" name="lname" placeholder="Last Name" />
-			            <input type="text" name="add" placeholder="Address" />
+			            <input type="text" name="address" placeholder="Address" />
 			            <input type="text" name="city" placeholder="City" />
 			            <input type="text" name="state" placeholder="State" />
-			            <input type="text" name="zip" placeholder="Zip Code" />
+			            <input type="text" name="zipcode" placeholder="Zip Code" />
 			            <input type="text" name="email" placeholder="Email" />
-			            <input type="text" name="pass" placeholder="Create a Password" />
-			           
-
-			            <a href="#"><center><button type="button">Create Account</button></center></a>
-
+			            <br/>
+			            <input type="text" name="username" placeholder="User Name" />
+			            <input type="text" name="password" placeholder="Create a Password" />
+			           	<br/>
+			            <input type="submit" name="action" value="Create Account" />
 			        </form>
-			  </div>
-
-		  
-					</div>
-				</div>
-
+			 	</div>
+			</div>
+		</div>
 	</div>
 
 
