@@ -46,7 +46,7 @@
 								$stock=$row['stock'];
 								$cost=$row['cost'];
 								$price=$row['price'];
-								$img=$row['image'];
+								$img=$row['prodimg'];
 								$weight=$row['weight'];
 								$size=$row['size'];
 
