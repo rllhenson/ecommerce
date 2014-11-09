@@ -5,7 +5,7 @@
 	session_start(); 
 	error_reporting(E_ALL);
 
-	if(isset($_POST['action'])){
+	if(isset($_POST['action'])&&$_POST['action']=='Create Account'){
 		$fname = $_REQUEST["fname"]; 
 		$lname = $_REQUEST["lname"];
 		$address = $_REQUEST["address"];
@@ -19,6 +19,23 @@
 		$mysqli->query("INSERT INTO priv_users (fname, lname, address, city, state, zipcode, email, password, username) 
 			VALUES ('$fname', '$lname', '$address', '$city', '$state', '$zip', '$email', '$pword', '$uname')")/* insert the data to the food_menu table*/
 		    or die ("Could not add the data to table");//error message
+	}else if(isset($_POST['action'])&&$_POST['action']=='Customer Login'){
+		$uname = $_REQUEST['user'];
+
+		$myquery="SELECT * FROM `priv_users` WHERE `username` = '$uname'"; 
+
+	    $result=$mysqli->query($myquery)
+			or die ($mysqli->error);
+
+		$fname = $_POST["fname"]; 
+		$lname = $_POST["lname"];
+		$address = $_POST["address"];
+		$city = $_POST["city"];
+		$state = $_POST["state"]; 
+		$zip = $_POST["zipcode"];
+		$email = $_POST["email"];
+		// $pword = $_POST["password"];
+		// $uname = $_POST["username"];
 	}
 ?>
 
@@ -27,26 +44,6 @@
 				<h2>Your Account</h2>
 				<hr>
 				<div id="clientDesc">
-					<?php
-						$uname = $_REQUEST["username"];
-
-						$myquery="SELECT * FROM `priv_users` WHERE `username` = $uname"; 
-
-					    $result=$mysqli->query($myquery)
-							or die ($mysqli->error);
-
-						$fname = $_POST["fname"]; 
-						$lname = $_POST["lname"];
-						$address = $_POST["address"];
-						$city = $_POST["city"];
-						$state = $_POST["state"]; 
-						$zip = $_POST["zipcode"];
-						$email = $_POST["email"];
-						$pword = $_POST["password"];
-						$uname = $_POST["username"];
-
-
-					?>
 					<h4>Name</h4>
 					<input class="fullline" type="text" value="<?php echo $fname." ".$lname; ?>">
 					<h4>Address</h4>
