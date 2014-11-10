@@ -1219,6 +1219,7 @@ td form input[type="text"]{
 
 }
 
+
 /*admin stuff*/
 .adminimage{
 	width: 100%;
@@ -1552,6 +1553,19 @@ td form input[type="text"]{
 	color:white;
 	border:none;
 	font-size: 1.2em;
+
+}
+
+#contactsent{
+	display: none;
+	width: 100%;
+	margin-left: 4%;
+	text-align: left;
+	padding: 1%;
+	font-family: 'Poiret One', cursive;
+	color:white;
+	border:none;
+	font-size: 1.7em;
 
 }
 
