@@ -1,6 +1,6 @@
 <?php 
 $pageTitle='FloorFive Contact';
-include 'header.php'; 
+include 'includes/header.php'; 
 
 ?>
 <?php
@@ -63,10 +63,10 @@ $count=$result->num_rows;
 				<div id="contactcontent">
 					<img src="img/<?php echo $img; ?>" alt="red telephone box rug">
 					<div id="soveryclose">
-            <p><?php echo $product_name; ?></p>
-            <p><?php echo $details; ?></p>
-            <p><?php echo $weight; ?>kg.</p>
-            <p>$<?php echo $price.' per '. $size; ?>m. sq.</p>
+            <p class="producttitle"><?php echo $product_name; ?></p>
+            <p class="productdetail">Description: <?php echo $details; ?></p>
+            <p class="productdetail">Weight: <?php echo $weight; ?>kg.</p>
+            <p class="productdetail">$<?php echo $price.' per '. $size; ?>m. sq.</p>
             <p></p>
             <form id="form1" name="form1" method="post" action="cart1.php">
               <input type="hidden" name="pid" id="pid" value="<?php echo $id; ?>" />
@@ -78,29 +78,34 @@ $count=$result->num_rows;
       
       <div class="customerreview">
         <p>Customer Reviews</p>
-        <p class="reviewtitle"><?php echo $reviewsname; ?></p>
+        <p class="reviewtitle">Name:</p>
+		<p class="reviewpull"><?php echo $reviewsname; ?></p><br>
         <p class="reviewtitle">Rating:</p>
-        <img src="img/<?php echo $reviewsimg; ?>" alt="Rating" />
-        <p class="reviewtitle"><?php echo $reviewspost; ?></p>
+        <img src="img/<?php echo $reviewsimg; ?>" alt="Rating" /><br>
+        <p class="reviewtitle">Review:</p>
+		<p class="reviewpull"><?php echo $reviewspost; ?></p>
       </div>
+	  <hr id="reviewhr">
       <div id="review">
-					<p>Write a review</p>
-					<div class="rating">
-						<span onclick="star1()">☆</span>
-						<span onclick="star2()">☆</span>
-						<span onclick="star3()">☆</span>
-						<span onclick="star4()">☆</span>
-					</div>
-					<form action="#" name="submitreview" method="post">
-						<textarea name="writereview" placeholder="Write your review here">
-						</textarea>
-						<input type="submit" id="submitreview"></input>
-					</form>
-				</div>
-				<div id="reviewsent">
-					<p>Thank you, your review has been submitted. It will be posted after approval.</p>
-				</div>
-		</div><!--end of content div-->
+			<p>Write a review</p>
+			<div class="rating">
+				<form action="#">
+					<input class="reviewcheck" type="radio" name="star" /><img src="img/stars1.png" alt="Hated it" class="ratingimg" />Hated it<br />
+					<input class="reviewcheck" type="radio" name="star" /><img src="img/stars2.png" alt="Disliked it" class="ratingimg" />Disliked it<br />
+					<input class="reviewcheck" type="radio" name="star" /><img src="img/stars3.png" alt="Liked it" class="ratingimg" />Liked it<br />
+					<input class="reviewcheck" type="radio" name="star" /><img src="img/stars4.png" alt="Loved it" class="ratingimg" />Loved it<br />
+				</form>
+			</div>
+			<form action="#" name="submitreview" method="post">
+				<textarea name="writereview" placeholder="Write your review here">
+				</textarea>
+				<button type="button" onClick="submitForm(this.submitreview)">Submit</button>
+			</form>
+		</div>			
+			<div id="reviewsent">
+				<p>Thank you, your review has been submitted. It will be posted after approval.</p>
+			</div>
+	</div><!--end of content div-->
 
 <?php 
 include 'footer.php'; 
