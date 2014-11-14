@@ -595,16 +595,15 @@
 
 .textbox form input[type=submit] {
 	margin-bottom: 5%;
-	width: 30%;
+	width: 20%;
 	text-align: center;
 	display: inline-block;
-	padding: 10%;
+	padding: 2.5%;
 	font-family: 'Poiret One', cursive;
 	background-color: #32373a;
 	color:white;
 	border:none;
-	font-size: 1.2em;}
-	</style>{
+	font-size: 1.2em;
     
 }
 form input[type="text"],
