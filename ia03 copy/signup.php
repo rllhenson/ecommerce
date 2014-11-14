@@ -5,8 +5,9 @@
 	session_start(); 
 	error_reporting(E_ALL);
 ?>
+<head>
 
-		<div class="contactimage">
+		<div class="signinimage">
 			<div id="clientcontent">
 				<h2>Sign Up</h2>
 				<div id="topbar">

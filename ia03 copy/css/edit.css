@@ -595,7 +595,6 @@
 
 .textbox form input[type=submit] {
 	margin-bottom: 5%;
-	width: 20%;
 	text-align: center;
 	display: inline-block;
 	padding: 2.5%;
@@ -606,6 +605,20 @@
 	font-size: 1.2em;
     
 }
+
+input[type=submit] {
+		margin-bottom: 5%;
+	text-align: center;
+	display: inline-block;
+	padding: 2.5%;
+	font-family: 'Poiret One', cursive;
+	background-color: #32373a;
+	color:white;
+	border:none;
+	font-size: 1.2em;
+	padding-top: 2
+}
+
 form input[type="text"],
 form input[type="password"] {
     height: 50px;
