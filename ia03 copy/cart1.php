@@ -81,7 +81,7 @@ if (!isset($_SESSION["cart_array"]) || count($_SESSION["cart_array"]) < 1) {
 	$pp_checkout_btn .= '<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
     <input type="hidden" name="cmd" value="_cart">
     <input type="hidden" name="upload" value="1">
-    <input type="hidden" name="business" value="you@youremail.com">';
+    <input type="hidden" name="business" value="floor.five@gmail.com">';
 	// Start the For Each loop
 	$i = 0; 
   foreach ($_SESSION["cart_array"] as $each_item) {
@@ -171,8 +171,8 @@ if (!isset($_SESSION["cart_array"]) || count($_SESSION["cart_array"]) < 1) {
         
 				<div class="total">
           <?php echo $cartTotal; ?>
-					<!--<p>Total Quanitity: 2</p>
-					<p>Total Price: $170</p>-->
+					<br />
+          <?php echo $pp_checkout_btn; ?>
 				</div>
 				<button type="button" onclick="location.href='admin.php'">Sign In and Check Out</button>
 				<button type="button" onclick="location.href='fulfillment.php'">Check Out as Guest</button>
