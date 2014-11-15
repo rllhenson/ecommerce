@@ -18,7 +18,7 @@
         			<br>
     			</div>    
     			<div class="textbox">
-			        <form action="admin.php">                
+			        <form method="post" action="admin.php">                
 			            <input type="text" name="adminname" placeholder="Username" />
 			            <input type="password" name="adminpass" placeholder="Password" />
 			            <input type="submit" name="signaction" value="Admin Login"/>    
@@ -33,7 +33,7 @@
 			    	<br>
 			    </div>    
 	    		<div class="textbox">
-			        <form action="client.php">             
+			        <form method="post" action="client.php">             
 			            <input type="text" name="user" placeholder="Username" />
 			            <input type="password" name="pass" placeholder="Password" />  
 			            <input type="submit" name="signaction" value="Customer Login"/>  
