@@ -78,7 +78,7 @@ if (!isset($_SESSION["cart_array"]) || count($_SESSION["cart_array"]) < 1) {
     $cartOutput = "<h2 align='center'>Your shopping cart is empty</h2>";
 } else {
 	// Start PayPal Checkout Button
-	$pp_checkout_btn .= '<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+	$pp_checkout_btn .= '<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
     <input type="hidden" name="cmd" value="_cart">
     <input type="hidden" name="upload" value="1">
     <input type="hidden" name="business" value="floor.five@gmail.com">';
