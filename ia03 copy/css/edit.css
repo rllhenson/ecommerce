@@ -508,7 +508,9 @@
 	margin: 0 auto;
 	margin-top: 2%;
 }
-
+.catalogcontent a:hover, .productscentered a:hover, .productscentered input[type="submit"], .catalogcontent input[type="submit"]{
+	cursor: pointer;
+}
 .productscentered{
 	width:84.5%;
 	margin: 0 auto;
