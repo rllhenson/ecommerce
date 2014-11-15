@@ -20,7 +20,7 @@
     			<div class="textbox">
 			        <form action="admin.php">                
 			            <input type="text" name="adminname" placeholder="Username" />
-			            <input type="password" name="adminpass" nameplaceholder="Password" />
+			            <input type="password" name="adminpass" placeholder="Password" />
 			            <input type="submit" name="signaction" value="Admin Login"/>    
 			        </form>
 			  	</div>
