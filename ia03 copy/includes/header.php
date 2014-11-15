@@ -14,9 +14,6 @@
 
 	<div class="gutter"></div>
 	<div class="header">
-		
-
-		
 
 		<form  action='catalog.php' method='post'>
         <div class="logo">
