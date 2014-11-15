@@ -39,7 +39,7 @@ if (isset($_GET['yesdelete'])) {
 	$sql = mysql_query("DELETE FROM products WHERE id='$id_to_delete' LIMIT 1") or die (mysql_error());
 	// unlink the image from server
 	// Remove The Pic -------------------------------------------
-    $pictodelete = ("../inventory_images/$id_to_delete.jpg");
+    $pictodelete = ("../img/$id_to_delete.jpg");
     if (file_exists($pictodelete)) {
        		    unlink($pictodelete);
     }
@@ -102,40 +102,54 @@ if ($productCount > 0) {
     </div>
     <hr />
     <a name="inventoryForm" id="inventoryForm"></a>
-    <h3>
-    &darr; Add New Inventory Item Form &darr;
-    </h3>
+    <p>&darr; Add New Inventory Item Form &darr;</p>
     <form action="inventory_list.php" enctype="multipart/form-data" name="myForm" id="myform" method="post">
     <table>
       <tr>
-        <td width="20%" align="right">Product Name</td>
-        <td width="80%"><label><input name="product_name" type="text" id="product_name" size="64" /></label></td>
+        <td>Product Name</td>
+        <td><input name="product_name" type="text" id="product_name"/></td>
       </tr>
       <tr>
-        <td align="right">Product Price</td>
-        <td><label>
-          <input name="price" type="text" id="price" size="12" />
-        </label></td>
+        <td>Product Description</td>
+        <td><textarea name="details" id="details" cols="32" rows="3"></textarea></td>
       </tr>
       <tr>
-        <td align="right">Product Details</td>
-        <td><label>
-          <textarea name="details" id="details" cols="64" rows="3"></textarea>
-        </label></td>
+        <td>Product Category</td>
+        <td><input name="category" type="text" id="category"/></td>
       </tr>
       <tr>
-        <td align="right">Product Image</td>
-        <td><label>
-          <input type="file" name="fileField" id="fileField" />
-        </label></td>
-      </tr>      
+        <td>Product SKU</td>
+        <td><input name="sku" type="text" id="sku"/></td>
+      </tr>
+      <tr>
+        <td>Product Stock</td>
+        <td><input name="stock" type="text" id="stock"/></td>
+      </tr>
+      <tr>
+        <td>Product cost</td>
+        <td><input name="cost" type="number" id="cost"/></td>
+      </tr>
+      <tr>
+        <td>Product Price</td>
+        <td><input name="price" type="number" id="price"/></td>
+      </tr>
+      <tr>
+        <td>Product Image</td>
+        <td><input type="file" name="fileField" id="fileField" /></td>
+      </tr>
+      <tr>
+        <td>Product Weight</td>
+        <td><input name="weight" type="text" id="weight" size="12" /></td>
+      </tr>
+      <tr>
+        <td>Product Size</td>
+        <td><input name="size" type="number" id="size" /></td>
+      </tr>
       <tr>
         <td>&nbsp;</td>
-        <td><label>
-          <input type="submit" name="button" id="button" value="Add Item" />
-        </label></td>
+        <td><input type="submit" name="button" id="button" value="Add Item" /></td>
       </tr>
-    </table>
+      </table>
     </form>
   </div>
   </div>

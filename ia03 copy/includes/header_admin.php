@@ -40,10 +40,10 @@
 
 		<div class="nav">
 			<ul>
-				<li><a href="home.php">home</a></li>
-				<li><a href="about.php">about</a></li>
-				<li><a href="catalog.php">catalog</a></li>
-				<li class="contact" ><a href="contact.php">contact</a></li>
+				<li><a href="../home.php">home</a></li>
+				<li><a href="../about.php">about</a></li>
+				<li><a href="../catalog.php">catalog</a></li>
+				<li class="contact" ><a href="../contact.php">contact</a></li>
 			</ul>
 
 		</div>
