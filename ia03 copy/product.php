@@ -59,7 +59,7 @@ $count=$result->num_rows;
 }
 ?>
       <!--continuing content div-->
-			<div class="contactimage">
+			<div class="productimage">
 				<div id="contactcontent">
 					<img src="img/<?php echo $img; ?>" alt="red telephone box rug">
 					<div id="soveryclose">
@@ -98,14 +98,16 @@ $count=$result->num_rows;
 			</div>
 			<form action="#" name="submitreview" method="post">
 				<textarea name="writereview" placeholder="Write your review here">
-				</textarea>
+				</textarea><br /><br />
 				<button type="button" onClick="submitForm(this.submitreview)">Submit</button>
 			</form>
 		</div>			
 			<div id="reviewsent">
 				<p>Thank you, your review has been submitted. It will be posted after approval.</p>
 			</div>
-	</div><!--end of content div-->
+	</div>
+    
+    <!--end of content div-->
 
 <?php 
 include 'footer.php'; 

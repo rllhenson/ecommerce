@@ -996,10 +996,11 @@ form input[type="password"] {
 
 .productimage{
 	width: 100%;
-	background-image: url(../img/bamboorug.jpg);
-	background-repeat: no-repeat;
+	background-image: url(../img/Contact_small.jpg);
+	/*background-repeat:*/
 	background-position: 50% 50%;
 	display: inline-block;
+	background-size:cover;
 
 
 }
@@ -1150,6 +1151,7 @@ td form input[type="text"]{
 	display: block;
 	padding-left: 5%;
 	padding-top: 0%;
+	padding-bottom:5%;
 }
 
 
@@ -1190,7 +1192,8 @@ td form input[type="text"]{
 	display: block;
 	text-align: left;
 	padding-left: 5%;
-	padding-bottom: 2%;
+	padding-bottom: 3%;
+	padding-top:5%;
 }
 
 .customerreview hr{
@@ -2018,6 +2021,62 @@ td form input[type="text"]{
 		font-size: 1.2em;
 		width: 100%;
 	}
+
+/*Product Page*/
+
+#review{
+	font-family: 'Poiret One', cursive;
+	color: white;
+	text-shadow: 1px 1px 1px #32373a;
+	font-size: 1em;
+	width: 95%;
+	display: block;
+	padding-left: 5%;
+	padding-top: 0%;
+	padding-bottom:5%;
+}
+
+
+#review p{
+	display: inline-block;
+	padding-right: 5%;
+}
+
+
+#review button {
+	margin-left: 64%;
+	margin-top: 0%;
+	text-align: center;
+	display: inline-block;
+	padding: 1%;
+	font-family: 'Poiret One', cursive;
+	background-color: #32373a;
+	color:white;
+	border:none;
+	font-size: 1em;
+	width: 30%;
+
+}
+
+.reviewcheck {
+	float: left;
+	margin-left: 0px;
+	font-size: 1em;
+	margin-top: 1%
+}
+
+.customerreview{
+	font-family: 'Poiret One', cursive;
+	color: white;
+	text-shadow: 1px 1px 1px #32373a;
+	font-size: 1.5em;
+	width: 95%;
+	display: block;
+	text-align: left;
+	padding-left: 5%;
+	padding-bottom: 3%;
+	padding-top:5%;
+}
 
 	
 }
