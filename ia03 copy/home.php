@@ -52,7 +52,7 @@
 							<form method='post' action='cart1.php'>
 								<div class='featured_item'>
 									<div class='featured_img'><img src='img/".$img."' alt='image of featured product'></div>
-									<div class='featured_desc'><p class='name'>".$prodname."</p><p>$".$price."</p><p>".$size."</p>
+									<div class='featured_desc'><p class='name'><a href='product.php?id=$id'>".$prodname."</a></p><p>$".$price."</p><p>".$size."</p>
 									<input type='hidden' name='pid' id='pid' value='$id' />
 									<input type='submit' value='ADD TO CART'>
 									</div>
