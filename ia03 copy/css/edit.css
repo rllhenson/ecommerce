@@ -1807,7 +1807,7 @@ td form input[type="text"]{
 	}
 	
 	/* Home page */
-  /*
+  
 	.featured_item{
 		margin-top:5%;
 		text-align: center;
@@ -1815,6 +1815,7 @@ td form input[type="text"]{
 	.featured_img{
 		width: 87%;
 		display: block;
+		margin-left:6.5%;
 	}
 	.featured_img img{
     	width: 100%;
@@ -1828,7 +1829,7 @@ td form input[type="text"]{
 		display: inline-block;
 		vertical-align: top;
 		text-align: left;
-	}*/
+	}
 	
 	/*contact stuff*/
 	.contactimage{
