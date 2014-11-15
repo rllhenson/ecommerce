@@ -10,16 +10,22 @@
 				<div id="contactcontent">
 					<img src="img/header_rug.jpg" alt="contact header image">
 					<div id="soveryclose">
-						<h4>Name</h4>
-						<input type="text">
-						<h4>Return Email</h4>
-						<input type="text">
-						<h4>Subject</h4>
-						<input type="text">
-						<h4>Message</h4>
-						<!-- make this a superbig text box -->
-						<textarea rows="4" name="whatevs">We would love to hear from you. Please enter a question or comment here...</textarea>
-						<button type="button">Send Message</button>
+						
+							<h4>Name</h4>
+							<input type="text">
+							<h4>Return Email</h4>
+							<input type="text">
+							<h4>Subject</h4>
+							<input type="text">
+							<h4>Message</h4>
+							<!-- make this a superbig text box -->
+							<form action="#" name="submitcontact" method="post">
+							<textarea rows="4">We would love to hear from you. Please enter a question or comment here...</textarea>
+							<button type="button" onClick="submitContactForm(this.submitcontact)">Send Message</button>
+						</form>
+					</div>
+					<div id="contactsent">
+						<p>Thank you, your message has been sent. We will be in touch with you within 48 hours.</p>
 					</div>
 				</div>
 			</div>

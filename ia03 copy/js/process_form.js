@@ -7,3 +7,9 @@ function submitForm(submitreview){
 		document.getElementById('reviewsent').style.display="block";		
 
 }
+
+function submitContactForm(submitcontact){
+
+		document.getElementById('contactsent').style.display="block";		
+
+}
