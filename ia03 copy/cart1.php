@@ -81,7 +81,7 @@ if (!isset($_SESSION["cart_array"]) || count($_SESSION["cart_array"]) < 1) {
 	$pp_checkout_btn .= '<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
     <input type="hidden" name="cmd" value="_cart">
     <input type="hidden" name="upload" value="1">
-    <input type="hidden" name="business" value="you@youremail.com">';
+    <input type="hidden" name="business" value="floor.five@gmail.com">';
 	// Start the For Each loop
 	$i = 0; 
   foreach ($_SESSION["cart_array"] as $each_item) {
@@ -136,11 +136,11 @@ if (!isset($_SESSION["cart_array"]) || count($_SESSION["cart_array"]) < 1) {
 	$cartTotal = "<div>Cart Total : ".$cartTotal." USD</div>";
     // Finish the Paypal Checkout Btn
 	$pp_checkout_btn .= '<input type="hidden" name="custom" value="' . $product_id_array . '">
-	<input type="hidden" name="notify_url" value="https://www.yoursite.com/storescripts/my_ipn.php">
-	<input type="hidden" name="return" value="https://www.yoursite.com/checkout_complete.php">
+	<input type="hidden" name="notify_url" value="http://sulley.cah.ucf.edu/~ra072140/dig4530c_group04/A/ia03copy/client.php">
+	<input type="hidden" name="return" value="http://sulley.cah.ucf.edu/~ra072140/dig4530c_group04/A/ia03copy/catalog.php">
 	<input type="hidden" name="rm" value="2">
 	<input type="hidden" name="cbt" value="Return to The Store">
-	<input type="hidden" name="cancel_return" value="https://www.yoursite.com/paypal_cancel.php">
+	<input type="hidden" name="cancel_return" value="http://sulley.cah.ucf.edu/~ra072140/dig4530c_group04/A/ia03copy/cart1.php">
 	<input type="hidden" name="lc" value="US">
 	<input type="hidden" name="currency_code" value="USD">
 	<input type="image" src="http://www.paypal.com/en_US/i/btn/x-click-but01.gif" name="submit" alt="Make payments with PayPal - its fast, free and secure!">
