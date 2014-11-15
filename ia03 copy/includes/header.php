@@ -20,7 +20,7 @@
 
 		<form  action='catalog.php' method='post'>
         <div class="logo">
-			<img src="img/logo1.png" alt="Floor Five Interior Designs"/>
+			<a href="home.php"><img src="img/logo1.png" alt="Floor Five Interior Designs"/></a>
 		</div>
         
         <div class="space_between_logo">
