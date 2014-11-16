@@ -1,6 +1,17 @@
 @import url(http://fonts.googleapis.com/css?family=Poiret+One);
 
 
+/*Admin Styles*/
+#addProduct input{
+  margin:5px 0;
+  padding: 0;
+  border-radius: 0;
+  height: 1.5em;
+}
+.footer a{
+  color: #fff;
+}
+
 /*This is all of my header stuff*/
 .one{
 	width: 30%;
@@ -550,7 +561,7 @@
 	font-size: 1.5em;
 	padding-top: 2%;
 }
-.catalog_desc input, td form input[type="submit"], #form1 input, #review form button{
+.catalog_desc input, td form input[type="submit"], #form1 input{
 	margin-top: 10%;
 	padding: 2%;
 	font-family: 'Poiret One', cursive;
@@ -1251,17 +1262,17 @@ td form input[type="text"]{
 }
 
 #review button {
-	margin-left: 0%;
+	margin-left: 64%%;
 	margin-top: 0%;
 	text-align: center;
 	display: inline-block;
-	padding: 1%;
+	padding: 2%;
 	font-family: 'Poiret One', cursive;
 	background-color: #32373a;
 	color:white;
 	border:none;
-	font-size: 1em;
-	width: 10%;
+	font-size: 1.2em;
+	width: 30%;
 	cursor: pointer;
 
 }
@@ -2113,13 +2124,3 @@ td form input[type="text"]{
     max-width:940px;
 }
 
-/*Admin Styles*/
-#addProduct input{
-  margin:5px 0;
-  padding: 0;
-  border-radius: 0;
-  height: 1.5em;
-}
-.footer a{
-  color: #fff;
-}
