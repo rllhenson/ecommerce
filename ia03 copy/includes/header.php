@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-	<title><?php $pageTitle ?></title>
+	<title><?php print $pageTitle; ?></title>
 
 	<link rel="stylesheet" href="css/reset.css"/>
 	<link rel="stylesheet" href="css/edit.css"/>
@@ -17,7 +17,7 @@
 
 		<form  action='catalog.php' method='post'>
         <div class="logo">
-			<img src="img/logo1.png" alt="Floor Five Interior Designs"/>
+			<a href="home.php"><img src="img/logo1.png" alt="Floor Five Interior Designs"/></a>
 		</div>
         
         <div class="space_between_logo">
@@ -29,13 +29,14 @@
 					// $loginfail=$_POST['loginfail'];
 					// $loginadmin=$_POST['loginadmin'];
 					// $loginclient=$_POST['loginclient'];
-					if(!isset($_POST['signaction'])||$loginfail==1){
+					// if(!isset($_POST['signaction'])||$loginfail==1){
 						print '<a href="signin.php"><h4>sign in</h4></a><p>/</p><a href="cart1.php"><h4>view cart</h4></a>';
-					} else if($loginadmin==1){
-						print '<a href="admin.php"><h4>manage products</h4></a><p>/</p><a href="signin.php"><h4>sign out</h4></a>';
-					} else if($loginclient==1){
-						print '<a href="client.php"><h4>view account</h4></a><p>/</p><a href="signin.php"><h4>sign out</h4></a>';
-					}?>
+					// } else if($loginadmin==1){
+					// 	print '<a href="admin.php"><h4>manage products</h4></a><p>/</p><a href="signin.php"><h4>sign out</h4></a>';
+					// } else if(isset($_POST['action'])&&$_POST['action']=='Create Account'||$_POST['signaction']=='Customer Login'){
+					// 	print '<a href="client.php"><h4>view account</h4></a><p>/</p><a href="signin.php"><h4>sign out</h4></a>';
+					// }
+					?>
 				</div>
 				<div class="search">
 					<input type="text" name="sitesearch" autocomplete="off" placeholder="search products">
