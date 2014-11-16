@@ -33,8 +33,13 @@ if (isset($_GET['deleteid'])) {
 	exit();
 }
 if (isset($_GET['yesdelete'])) {
+  $id_to_delete = $_GET['yesdelete'];
+  $myquery = "DELETE FROM products WHERE productid='$id_to_delete' LIMIT 1";
+  $result=$mysqli->query($myquery)
+    or die ($mysqli->error);
 	// remove item from system and delete its picture
 	// delete from database
+  /*
 	$id_to_delete = $_GET['yesdelete'];
 	$sql = mysql_query("DELETE FROM products WHERE id='$id_to_delete' LIMIT 1") or die (mysql_error());
 	// unlink the image from server
@@ -44,7 +49,7 @@ if (isset($_GET['yesdelete'])) {
        		    unlink($pictodelete);
     }
 	header("location: inventory_list.php"); 
-    exit();
+    exit();*/
 }
 ?>
 <?php 
