@@ -174,7 +174,7 @@ if (!isset($_SESSION["cart_array"]) || count($_SESSION["cart_array"]) < 1) {
 					<br />
           <?php echo $pp_checkout_btn; ?>
 				</div>
-				<?php echo $pp_checkout_btn; ?>
+				
 				<!-- <button type="button" onclick="location.href='admin.php'">Sign In and Check Out</button> -->
 				<!-- <button type="button" onclick="location.href='fulfillment.php'">Check Out as Guest</button> -->
 			</div>

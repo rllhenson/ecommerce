@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-	<title><?php $pageTitle ?></title>
+	<title><?php print $pageTitle; ?></title>
 
 	<link rel="stylesheet" href="../css/reset.css"/>
 	<link rel="stylesheet" href="../css/edit.css"/>
@@ -29,7 +29,7 @@
 			<div class="search">
 			
 				<input type="text" name="sitesearch">
-				<!-- for button I'll need form=form id of the form search is in 
+				<!-for button I'll need form=form id of the form search is in 
   				<button type="button"><img src="img/search.png" alt="magnifying glass" width="26" height="26"/></button>
 			</div>
 		</div>-->
