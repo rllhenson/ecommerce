@@ -170,8 +170,9 @@ if (!isset($_SESSION["cart_array"]) || count($_SESSION["cart_array"]) < 1) {
         <br />
         
 				<div class="total">
-          <?php echo $cartTotal; ?>
+          			<?php echo $cartTotal; ?>
 					<br />
+					<?php echo $pp_checkout_btn; ?>
 				</div>
 				
 				<!-- <button type="button" onclick="location.href='admin.php'">Sign In and Check Out</button> -->
