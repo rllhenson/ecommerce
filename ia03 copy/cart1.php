@@ -158,7 +158,7 @@ if (!isset($_SESSION["cart_array"]) || count($_SESSION["cart_array"]) < 1) {
         <table>
           <tr>
             <td width="20%">Product</td>
-            <td width="30%">Product Description</td>
+            <td width="20%">Product Description</td>
             <td width="20%">Unit Price</td>
             <td width="10%">Quantity</td>
             <td width="10%">Total</td>

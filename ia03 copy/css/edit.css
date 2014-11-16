@@ -711,8 +711,8 @@ form input[type="password"] {
 
 }
 #cartcontent table {
-	margin: 0 auto;
-	width: 100%;
+	/*margin: 0 auto;*/
+	width: 96%;
 	display: inline-block;
 	vertical-align: top;
 	/*padding: 2%;*/
@@ -720,6 +720,7 @@ form input[type="password"] {
 	color:white;
 	border:none;
 	font-size: 1.2em;
+	margin:2%;
 }
 
 #cartcontent td {
@@ -810,10 +811,11 @@ form input[type="password"] {
 	color: white;
 	text-shadow: 1px 1px 1px #32373a;
 	font-size: 1.5em;
-	width: 95%;
+	width: 80%;
 	display: inline-block;
 	text-align: right;
 	padding: 5%;
+	margin:5%;
 }
 .total p{
 	display: inline-block;
@@ -2094,6 +2096,25 @@ td form input[type="text"]{
 	padding-top:5%;
 }
 
+/*Cart*/
+
+#cartcontent table {
+	/*margin: 0 auto;*/
+	width: 96%;
+	display: inline-block;
+	vertical-align: top;
+	/*padding: 2%;*/
+	font-family: 'Poiret One', cursive;
+	color:white;
+	border:none;
+	font-size: .8em;
+	margin:2%;
+}
+
+#cartcontent td img{
+  width:100px;
+  height:100px;
+}
 	
 }
 
