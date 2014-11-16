@@ -273,14 +273,14 @@
 
 
 /*policies content*/
-.policiesimage{
+/*.policiesimage{
 	width: 100%;
 	background-image: url(../img/shawarearugs.png);
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	height: 298px;
 	display: inline-block;
-}
+}*/
 
 
 .policies{
@@ -744,7 +744,7 @@ form input[type="password"] {
 	text-shadow: 1px 1px 1px #32373a;
 	font-size: 2em;
 	text-align: center;
-
+	
 }
 
 .tablehead{

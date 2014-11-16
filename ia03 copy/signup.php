@@ -5,7 +5,6 @@
 	session_start(); 
 	error_reporting(E_ALL);
 ?>
-<head>
 
 		<div class="signinimage">
 			<div id="clientcontent">
@@ -31,7 +30,7 @@
 			</div>
 		</div>
 	</div>
-
+</div>
 
 <?php 
 	include 'includes/footer.php'; 
