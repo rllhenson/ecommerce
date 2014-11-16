@@ -12,7 +12,8 @@
 			<br>
 			<h4>Don't have an account? <a href="signup.php">Sign Up</a>.</h4>
 			<br><br>
-			<div class="topbar">
+			<!--<div class="topbar">
+      
     			<div class="titlebox">
         			<h2>Admin Login</h2>
         			<br>
@@ -24,7 +25,7 @@
 			            <input type="submit" name="signaction" value="Admin Login"/>    
 			        </form>
 			  	</div>
-			 </div>
+			 </div>-->
 
 	    	<div class="topbar">
 			    <div class="titlebox">
