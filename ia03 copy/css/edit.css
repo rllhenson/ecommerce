@@ -1175,6 +1175,7 @@ td form input[type="text"]{
 	border:none;
 	font-size: 1.2em;
 	width: 30%;
+	cursor: pointer;
 
 }
 

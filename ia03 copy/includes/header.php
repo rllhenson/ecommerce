@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-	<title><?php $pageTitle ?></title>
+	<title><?php print $pageTitle; ?></title>
 
 	<link rel="stylesheet" href="css/reset.css"/>
 	<link rel="stylesheet" href="css/edit.css"/>
