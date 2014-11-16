@@ -100,7 +100,7 @@
                         <p>".$size."</p>
                         <p>$".$price."</p>
                         <form method='post' action='cart1.php'>
-                        <input type='hidden' name='pid' id='pid' value='$id' />
+                        <input type='hidden' name='pid' class='pid' value='$id' />
                         <input type='submit' value='ADD TO CART' /></form>
                       </div>
                     </div>";
@@ -153,7 +153,7 @@
                   <p>".$size."</p>
                   <p>$".$price."</p>
                   <form method='post' action='cart1.php'>
-                  <input type='hidden' name='pid' id='pid' value='$id' />
+                  <input type='hidden' name='pid' class='pid' value='$id' />
                   <input type='submit' value='ADD TO CART' /></form>
                 </div>
               </div>";
@@ -203,7 +203,7 @@
                     <p>".$size."</p>
                     <p>$".$price."</p>
                     <form method='post' action='cart1.php'>
-                    <input type='hidden' name='pid' id='pid' value='$id' />
+                    <input type='hidden' name='pid' class='pid' value='$id' />
                     <input type='submit' value='ADD TO CART' /></form>
                   </div>
                 </div>";
@@ -252,7 +252,7 @@
                     <p>".$size."</p>
                     <p>$".$price."</p>
                     <form method='post' action='cart1.php'>
-                    <input type='hidden' name='pid' id='pid' value='$id' />
+                    <input type='hidden' name='pid' class='pid' value='$id' />
                     <input type='submit' value='ADD TO CART' /></form>
                   </div>
                 </div>";
@@ -301,7 +301,7 @@
                     <p>".$size."</p>
                     <p>$".$price."</p>
                     <form method='post' action='cart1.php'>
-                    <input type='hidden' name='pid' id='pid' value='$id' />
+                    <input type='hidden' name='pid' class='pid' value='$id' />
                     <input type='submit' value='ADD TO CART' /></form>
                   </div>
                 </div>";
@@ -351,7 +351,7 @@
                     <p>".$size."</p>
                     <p>$".$price."</p>
                     <form method='post' action='cart1.php'>
-                    <input type='hidden' name='pid' id='pid' value='$id' />
+                    <input type='hidden' name='pid' class='pid' value='$id' />
                     <input type='submit' value='ADD TO CART' /></form>
                   </div>
                 </div>";
@@ -403,7 +403,7 @@
                     <p>".$size."</p>
                     <p>$".$price."</p>
                     <form method='post' action='cart1.php'>
-                    <input type='hidden' name='pid' id='pid' value='$id' />
+                    <input type='hidden' name='pid' class='pid' value='$id' />
                     <input type='submit' value='ADD TO CART' /></form>
                   </div>
                 </div>";
@@ -452,7 +452,7 @@
                     <p>".$size."</p>
                     <p>$".$price."</p>
                     <form method='post' action='cart1.php'>
-                    <input type='hidden' name='pid' id='pid' value='$id' />
+                    <input type='hidden' name='pid' class='pid' value='$id' />
                     <input type='submit' value='ADD TO CART' /></form>
                   </div>
                 </div>";
@@ -501,7 +501,7 @@
                     <p>".$size."</p>
                     <p>$".$price."</p>
                     <form method='post' action='cart1.php'>
-                    <input type='hidden' name='pid' id='pid' value='$id' />
+                    <input type='hidden' name='pid' class='pid' value='$id' />
                     <input type='submit' value='ADD TO CART' /></form>
                   </div>
                 </div>";
@@ -550,7 +550,7 @@
                     <p>".$size."</p>
                     <p>$".$price."</p>
                     <form method='post' action='cart1.php'>
-                    <input type='hidden' name='pid' id='pid' value='$id' />
+                    <input type='hidden' name='pid' class='pid' value='$id' />
                     <input type='submit' value='ADD TO CART' /></form>
                   </div>
                 </div>";
@@ -599,7 +599,7 @@
                     <p>".$size."</p>
                     <p>$".$price."</p>
                     <form method='post' action='cart1.php'>
-                    <input type='hidden' name='pid' id='pid' value='$id' />
+                    <input type='hidden' name='pid' class='pid' value='$id' />
                     <input type='submit' value='ADD TO CART' /></form>
                   </div>
                 </div>";
@@ -648,7 +648,7 @@
                     <p>".$size."</p>
                     <p>$".$price."</p>
                     <form method='post' action='cart1.php'>
-                    <input type='hidden' name='pid' id='pid' value='$id' />
+                    <input type='hidden' name='pid' class='pid' value='$id' />
                     <input type='submit' value='ADD TO CART' /></form>
                   </div>
                 </div>";
@@ -698,7 +698,7 @@
                     <p>".$size."</p>
                     <p>$".$price."</p>
                     <form method='post' action='cart1.php'>
-                    <input type='hidden' name='pid' id='pid' value='$id' />
+                    <input type='hidden' name='pid' class='pid' value='$id' />
                     <input type='submit' value='ADD TO CART' /></form>
                   </div>
                 </div>";
@@ -748,7 +748,7 @@
                     <p>".$size."</p>
                     <p>$".$price."</p>
                     <form method='post' action='cart1.php'>
-                    <input type='hidden' name='pid' id='pid' value='$id' />
+                    <input type='hidden' name='pid' class='pid' value='$id' />
                     <input type='submit' value='ADD TO CART' /></form>
                   </div>
                 </div>";
@@ -798,7 +798,7 @@
                     <p>".$size."</p>
                     <p>$".$price."</p>
                     <form method='post' action='cart1.php'>
-                    <input type='hidden' name='pid' id='pid' value='$id' />
+                    <input type='hidden' name='pid' class='pid' value='$id' />
                     <input type='submit' value='ADD TO CART' /></form>
                   </div>
                 </div>";

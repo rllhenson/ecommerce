@@ -9,7 +9,7 @@
 
 		
 			<div class='catalogcontent'>
-				<form method="post" action="">
+				<form method="post" action="#">
 					<div id='catalog'>
 						<div class='orderby'><h2>Order by Category</h2><hr><input type='submit' name='action' value='floral'><input type='submit' name='action' value='modern'><input type='submit' name='action' value='traditional'><input type='submit' name='action' value='shag'></div>
 						<div class='orderby'><h2>Order by Color</h2><hr><input type='submit' name='action' value='red'><input type='submit' name='action' value='orange'><input type='submit' name='action' value='yellow'><input type='submit' name='action' value='green'><input type='submit' name='action' value='blue'><input type='submit' name='action' value='purple'></div>
