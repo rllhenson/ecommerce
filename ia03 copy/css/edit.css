@@ -625,6 +625,7 @@ form input[type="password"] {
     width: 270px;
     outline: 0;
 }
+
 form input[type="text"] {
     border-radius: 10px 10px 10px 10px;
     border: 1px solid #ccc;
@@ -642,7 +643,6 @@ form input[type="password"] {
    font-family: 'Poiret One', cursive;
     color: #32373a;
     padding: 0 0 0 10px;
-  
 }
 
 #clientcontent{
@@ -2047,4 +2047,12 @@ td form input[type="text"]{
     -webkit-box-shadow:0 0 25px #111;
     -moz-box-shadow:0 0 25px #111;
     max-width:940px;
+}
+
+/*Admin Styles*/
+#addProduct input{
+  margin:5px 0;
+  padding: 0;
+  border-radius: 0;
+  height: 1.5em;
 }
