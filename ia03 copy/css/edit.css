@@ -726,10 +726,25 @@ form input[type="password"] {
 #cartcontent td {
 	/*padding: 2%;*/
   vertical-align:top;
+  width: 20%;
 }
+
+.cartcontenttd{
+	width: 10%;
+}
+
 #cartcontent td img{
   width:120px;
   height:120px;
+}
+
+.tableh2{
+	color: white;
+	font-family: 'Poiret One', cursive;
+	text-shadow: 1px 1px 1px #32373a;
+	font-size: 2em;
+	text-align: center;
+
 }
 
 .tablehead{

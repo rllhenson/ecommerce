@@ -75,7 +75,7 @@ $cartTotal = "";
 $pp_checkout_btn = '';
 $product_id_array = '';
 if (!isset($_SESSION["cart_array"]) || count($_SESSION["cart_array"]) < 1) {
-    $cartOutput = "<h2 align='center'>Your shopping cart is empty</h2>";
+    $cartOutput = "<tr class='tableh2'><td colspan='6'>Your shopping cart is empty</td></tr>";
 } else {
 	// Start PayPal Checkout Button
 	$pp_checkout_btn .= '<form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
@@ -157,12 +157,12 @@ if (!isset($_SESSION["cart_array"]) || count($_SESSION["cart_array"]) < 1) {
         <?php //echo "$pid"; ?>
         <table>
           <tr>
-            <td width="20%">Product</td>
-            <td width="20%">Product Description</td>
-            <td width="20%">Unit Price</td>
-            <td width="10%">Quantity</td>
-            <td width="10%">Total</td>
-            <td width="10%">Remove</td>
+            <td>Product</td>
+            <td>Product Description</td>
+            <td>Unit Price</td>
+            <td class="cartcontentid">Quantity</td>
+            <td class="cartcontentid">Total</td>
+            <td class="cartcontentid">Remove</td>
           </tr>
           <?php echo $cartOutput; ?>
         </table>
