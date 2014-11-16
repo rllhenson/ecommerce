@@ -79,29 +79,28 @@ $count=$result->num_rows;
       <div class="customerreview">
         <p>Customer Reviews</p>
         <p class="reviewtitle">Name:</p>
-		<p class="reviewpull"><?php echo $reviewsname; ?></p><br>
+		    <p class="reviewpull"><?php echo $reviewsname; ?></p><br>
         <p class="reviewtitle">Rating:</p>
         <img src="img/<?php echo $reviewsimg; ?>" alt="Rating" /><br>
         <p class="reviewtitle">Review:</p>
-		<p class="reviewpull"><?php echo $reviewspost; ?></p>
+		    <p class="reviewpull"><?php echo $reviewspost; ?></p>
       </div>
-	  <hr id="reviewhr">
+	    <hr id="reviewhr">
       <div id="review">
-			<p>Write a review</p>
-			<div class="rating">
-				<form action="#">
-					<input class="reviewcheck" type="radio" name="star" /><img src="img/stars1.png" alt="Hated it" class="ratingimg" />Hated it<br />
-					<input class="reviewcheck" type="radio" name="star" /><img src="img/stars2.png" alt="Disliked it" class="ratingimg" />Disliked it<br />
-					<input class="reviewcheck" type="radio" name="star" /><img src="img/stars3.png" alt="Liked it" class="ratingimg" />Liked it<br />
-					<input class="reviewcheck" type="radio" name="star" /><img src="img/stars4.png" alt="Loved it" class="ratingimg" />Loved it<br />
-				</form>
-			</div>
-			<form action="#" name="submitreview" method="post">
-				<textarea name="writereview" placeholder="Write your review here">
-				</textarea><br /><br />
-				<button type="button" onClick="submitForm(this.submitreview)">Submit</button>
-			</form>
-		</div>			
+  			<p>Write a review</p>
+  			<div class="rating">
+  				<form action="#">
+  					<input class="reviewcheck" type="radio" name="star" /><img src="img/stars1.png" alt="Hated it" class="ratingimg" />Hated it<br />
+  					<input class="reviewcheck" type="radio" name="star" /><img src="img/stars2.png" alt="Disliked it" class="ratingimg" />Disliked it<br />
+  					<input class="reviewcheck" type="radio" name="star" /><img src="img/stars3.png" alt="Liked it" class="ratingimg" />Liked it<br />
+  					<input class="reviewcheck" type="radio" name="star" /><img src="img/stars4.png" alt="Loved it" class="ratingimg" />Loved it<br />
+  				</form>
+  			</div>
+  			<form action="#" name="submitreview" method="post">
+  				<textarea name="writereview" placeholder="Write your review here"></textarea><br /><br />
+  				<button type="button" onClick="submitForm(this.submitreview)">Submit</button>
+  			</form>
+		  </div>			
 			<div id="reviewsent">
 				<p>Thank you, your review has been submitted. It will be posted after approval.</p>
 			</div>
