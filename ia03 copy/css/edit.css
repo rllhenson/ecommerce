@@ -609,7 +609,7 @@
 }
 
 input[type=submit] {
-		margin-bottom: 5%;
+	margin-bottom: 5%;
 	text-align: center;
 	display: inline-block;
 	padding: 2.5%;
@@ -1035,8 +1035,8 @@ form input[type="password"] {
 	font-size: 1.2em;
 }
 
-/*
-input[type=submit] {
+
+/*input[type=submit] {
 
 	margin-top: 5%;
 	margin-left: 10%;
@@ -1163,21 +1163,7 @@ td form input[type="text"]{
 }
 
 
-#review button {
-	margin-left: 64%;
-	margin-top: 0%;
-	text-align: center;
-	display: inline-block;
-	padding: 1%;
-	font-family: 'Poiret One', cursive;
-	background-color: #32373a;
-	color:white;
-	border:none;
-	font-size: 1.2em;
-	width: 30%;
-	cursor: pointer;
 
-}
 
 .reviewcheck {
 	float: left;
@@ -1264,6 +1250,21 @@ td form input[type="text"]{
 
 }
 
+#review button {
+	margin-left: 0%;
+	margin-top: 0%;
+	text-align: center;
+	display: inline-block;
+	padding: 1%;
+	font-family: 'Poiret One', cursive;
+	background-color: #32373a;
+	color:white;
+	border:none;
+	font-size: 1em;
+	width: 10%;
+	cursor: pointer;
+
+}
 
 /*admin stuff*/
 .adminimage{
