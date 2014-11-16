@@ -16,14 +16,22 @@
 				<hr>
 				<div id="clientDesc">
 					<h4>Name</h4>
-					<input class="fullline" type="text" value="<?php echo $fname." ".$lname; ?>">
+					<!--<input class="fullline" type="text" value="<?php echo $fname." ".$lname; ?>" /> -->
+					<p class="fullline"><?php echo $fname." ".$lname; ?></p>
 					<h4>Address</h4>
-					<input class="fullline" type="text" value="<?php echo $address; ?>">
-					<input class="tinyline" type="text" value="<?php echo $city; ?>">
-					<input class="tinyline" type="text" value="<?php echo $state; ?>">
-					<input class="tinyline" type="text" value="<?php echo $zip; ?>">
+					<!--
+					<input class="fullline" type="text" value="<?php echo $address; ?>" />
+					<input class="tinyline" type="text" value="<?php echo $city; ?>" />
+					<input class="tinyline" type="text" value="<?php echo $state; ?>" />
+					<input class="tinyline" type="text" value="<?php echo $zip; ?>" />
+					-->
+					<p class="fullline"><?php echo $address; ?></p>
+					<p class="tinyline"><?php echo $city; ?></p>
+					<p class="tinyline"><?php echo $state; ?></p>
+					<p class="tinyline"><?php echo $zip; ?></p>
 					<h4>Email</h4>
-					<input class="fullline" type="email" value="<?php echo $email; ?>">
+					<!--<input class="fullline" type="email" value="<?php echo $email; ?>" />-->
+					<p class="fullline"><?php echo $email; ?></p>
 					<button type="button">Edit Information</button>
 					<button type="button">Sign Out</button>
 					
