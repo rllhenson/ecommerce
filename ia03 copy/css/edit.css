@@ -561,10 +561,10 @@
 	width: 100%;
 	display: inline-block;
 }
-.catalog_desc p a:link,.catalog_desc p a:visited{
+.catalog_desc p a:link,.catalog_desc p a:visited ,.featured_desc p a:link,.featured_desc p a:visited{
   color:#000;
 }
-.catalog_desc p a:hover{
+.catalog_desc p a:hover,.featured_desc p a:hover{
   color:#555555;
 }
 
@@ -618,7 +618,7 @@ input[type=submit] {
 	color:white;
 	border:none;
 	font-size: 1.2em;
-	padding-top: 2
+	padding-top: 2%;
 }
 
 form input[type="text"],
@@ -2118,4 +2118,7 @@ td form input[type="text"]{
   padding: 0;
   border-radius: 0;
   height: 1.5em;
+}
+.footer a{
+  color: #fff;
 }

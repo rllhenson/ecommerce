@@ -2,7 +2,7 @@
 $pageTitle='FloorFive Admin Edit';
 include '../includes/header_admin.php';
 session_start();
-if (!isset($_SESSION["manager"])) {
+if (!isset($_SESSION["adminuser"])) {
     header("location: admin_login.php"); 
     exit();
 }
@@ -157,6 +157,14 @@ if ($productCount > 0) {
     $product_list.="</table>";
 } else {
 	$product_list = "You have no products listed in your store yet";
+}
+
+if(isset($_GET['logout'])) {
+unset($_SESSION["adminsuser"]); 
+setcookie($_COOKIE['adminuser'],'',time()-3600);
+session_destroy();
+header('Location: ../home.php');
+exit;
 }
 ?>
 
