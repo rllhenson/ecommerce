@@ -1009,7 +1009,7 @@ form input[type="password"] {
 
 .productimage{
 	width: 100%;
-	background-image: url(../img/Contact_small.jpg);
+	background-image: url(../img/contact_small.jpg);
 	/*background-repeat:*/
 	background-position: 50% 50%;
 	display: inline-block;
