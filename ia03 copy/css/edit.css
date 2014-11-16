@@ -561,10 +561,10 @@
 	width: 100%;
 	display: inline-block;
 }
-.catalog_desc p a:link,.catalog_desc p a:visited{
+.catalog_desc p a:link,.catalog_desc p a:visited ,.featured_desc p a:link,.featured_desc p a:visited{
   color:#000;
 }
-.catalog_desc p a:hover{
+.catalog_desc p a:hover,.featured_desc p a:hover{
   color:#555555;
 }
 
