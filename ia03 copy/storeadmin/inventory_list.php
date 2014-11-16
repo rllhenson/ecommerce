@@ -2,7 +2,7 @@
 $pageTitle='FloorFive Admin Edit';
 include '../includes/header_admin.php';
 session_start();
-if (!isset($_SESSION["manager"])) {
+if (!isset($_SESSION["adminuser"])) {
     header("location: admin_login.php"); 
     exit();
 }
