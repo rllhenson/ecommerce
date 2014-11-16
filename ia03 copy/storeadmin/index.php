@@ -20,6 +20,14 @@ if ($count == 0) {
 	 echo "Your login session data is not on record in the database.";
      exit();
 }
+
+if(isset($_GET['logout'])) {
+unset($_SESSION["adminsuser"]); 
+setcookie($_COOKIE['adminuser'],'',time()-3600);
+session_destroy();
+header('Location: ../home.php');
+exit;
+}
 ?>
 
   <div class="adminimage">

@@ -158,6 +158,14 @@ if ($productCount > 0) {
 } else {
 	$product_list = "You have no products listed in your store yet";
 }
+
+if(isset($_GET['logout'])) {
+unset($_SESSION["adminsuser"]); 
+setcookie($_COOKIE['adminuser'],'',time()-3600);
+session_destroy();
+header('Location: ../home.php');
+exit;
+}
 ?>
 
   <div class="cartimage">

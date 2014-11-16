@@ -97,6 +97,14 @@ if (isset($_GET['pid'])) {
 		exit();
     }*/
 }
+
+if(isset($_GET['logout'])) {
+unset($_SESSION["adminsuser"]); 
+setcookie($_COOKIE['adminuser'],'',time()-3600);
+session_destroy();
+header('Location: ../home.php');
+exit;
+}
 ?>
 
   <div class="cartimage">
