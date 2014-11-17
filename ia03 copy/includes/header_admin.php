@@ -28,7 +28,7 @@
 
 			</div>
 		</div>
-	</div>
+	
 	<div class="gutter"></div>
   
   	<div class="content">
