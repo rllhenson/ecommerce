@@ -21,6 +21,10 @@ $count=$result->num_rows;
       $img = $row["prodimg"];
       $weight = $row["weight"];
       $size = $row["size"];
+      $stock = $row['stock'];
+    }
+    if ($stock<=5){
+      $price=$price/2;
     }
   } else {
   echo "That item does not exist.";
@@ -109,5 +113,5 @@ $count=$result->num_rows;
     <!--end of content div-->
 
 <?php 
-include 'footer.php'; 
+include 'includes/footer.php'; 
 ?>

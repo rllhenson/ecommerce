@@ -1,18 +1,17 @@
-<?php 
-	$pageTitle='FloorFive Client';
-	include 'includes/connect_to_mysql.php';
-	include 'includes/valid.php';
-	include 'includes/header.php';
-	session_start(); 
-	error_reporting(E_ALL);
+<?php
+	session_start();
+	unset($_SESSION["clientuser"]); 
+	unset($_SESSION["clientpass"]); 
+	unset($_SESSION["id"]); 
+	// setcookie($_COOKIE['clientuser'],'',time()-3600);
+	// session_destroy();
+	header('Location: ../signin.php');
+	exit;
 
 ?>
-		<div class="clientimage">
-			<div id="clientcontent">
-				<h2>Your Account</h2>
-				<hr>
-				<div id="clientDesc">
-					<h4>Name</h4>
+
+
+
 					<!--<input class="fullline" type="text" value="<?php //echo $fname." ".$lname; ?>" /> -->
 					<p class="fullline"><?php echo $fname." ".$lname; ?></p>
 					<h4>Address</h4>
@@ -29,16 +28,3 @@
 					<h4>Email</h4>
 					<!--<input class="fullline" type="email" value="<?php //echo $email; ?>" />-->
 					<p class="fullline"><?php echo $email; ?></p>
-					<button type="button">Edit Information</button>
-					<button type="button">Sign Out</button>
-					
-				</div>
-			</div>
-		</div>
-
-	</div>
-
-
-<?php 
-	include 'includes/footer.php'; 
-?>

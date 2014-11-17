@@ -2,7 +2,17 @@
 	$pageTitle='FloorFive Sign In';
 	include 'includes/header.php';
 	include 'includes/connect_to_mysql.php';
-	session_start(); 
+
+	// if(isset($_GET['logout'])) {
+	// 	unset($_SESSION["clientuser"]); 
+	// 	unset($_SESSION["clientpass"]); 
+	// 	unset($_SESSION["id"]); 
+	// 	setcookie($_COOKIE['clientuser'],'',time()-3600);
+	// 	session_destroy();
+	// 	// header('Location: signin.php');
+	// 	// exit;
+	// }
+	// session_start(); 
 	error_reporting(E_ALL);
 ?>
 
@@ -34,7 +44,7 @@
 			    	<br>
 			    </div>    
 	    		<div class="textbox">
-			        <form method="post" action="client.php">             
+			        <form method="post" action="includes/valid.php">             
 			            <input type="text" name="user" placeholder="Username" />
 			            <input type="password" name="pass" placeholder="Password" />  
 			            <input type="submit" name="signaction" value="Customer Login"/>  

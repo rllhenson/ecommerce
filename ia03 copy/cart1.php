@@ -2,7 +2,7 @@
 $pageTitle='FloorFive Cart';
 include 'includes/header.php';
 include 'includes/connect_to_mysql.php';
-session_start(); 
+
 error_reporting(E_ALL);
 ?>
 <?php
@@ -100,6 +100,11 @@ if (!isset($_SESSION["cart_array"]) || count($_SESSION["cart_array"]) < 1) {
 	        $price = $row["price"];
 	        $details = $row["description"];
 	        $img = $row["prodimg"];
+	        $stock = $row['stock'];
+		    
+		    if ($stock<=5){
+		      $price=$price/2;
+		    }
 	    //   }
 	    // }
     
@@ -136,11 +141,11 @@ if (!isset($_SESSION["cart_array"]) || count($_SESSION["cart_array"]) < 1) {
 	$cartTotal = "<div>Cart Total : ".$cartTotal." USD</div>";
     // Finish the Paypal Checkout Btn
 	$pp_checkout_btn .= '<input type="hidden" name="custom" value="' . $product_id_array . '">
-	<input type="hidden" name="notify_url" value="http://sulley.cah.ucf.edu/~ra072140/dig4530c_group04/A/ia03copy/client.php">
-	<input type="hidden" name="return" value="http://sulley.cah.ucf.edu/~ra072140/dig4530c_group04/A/ia03copy/catalog.php">
+	<input type="hidden" name="notify_url" value="http://sulley.cah.ucf.edu/~ra072140/dig4530c_group04/A/client.php">
+	<input type="hidden" name="return" value="http://sulley.cah.ucf.edu/~ra072140/dig4530c_group04/A/catalog.php">
 	<input type="hidden" name="rm" value="2">
 	<input type="hidden" name="cbt" value="Return to The Store">
-	<input type="hidden" name="cancel_return" value="http://sulley.cah.ucf.edu/~ra072140/dig4530c_group04/A/ia03copy/cart1.php">
+	<input type="hidden" name="cancel_return" value="http://sulley.cah.ucf.edu/~ra072140/dig4530c_group04/A/cart1.php">
 	<input type="hidden" name="lc" value="US">
 	<input type="hidden" name="currency_code" value="USD">
 	<input type="image" src="http://www.paypal.com/en_US/i/btn/x-click-but01.gif" name="submit" alt="Make payments with PayPal - its fast, free and secure!">

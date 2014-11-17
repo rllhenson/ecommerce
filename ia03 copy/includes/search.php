@@ -186,7 +186,7 @@
               $size=$row['size'];
               $id=$row['productid'];
 
-              $price=$price/2;
+               // $price=$price/2;
 
               $num++;
 
@@ -235,7 +235,7 @@
               $size=$row['size'];
               $id=$row['productid'];
 
-              $price=$price/2;
+              // $price=$price/2;
 
               $num++;
 
@@ -284,7 +284,7 @@
               $size=$row['size'];
               $id=$row['productid'];
 
-              $price=$price/2;
+              // $price=$price/2;
 
               $num++;
 
@@ -334,7 +334,7 @@
               $size=$row['size'];
               $id=$row['productid'];
 
-              $price=$price/2;
+              // $price=$price/2;
 
               $num++;
 
@@ -386,7 +386,7 @@
               $size=$row['size'];
               $id=$row['productid'];
 
-              $price=$price/2;
+              // $price=$price/2;
 
               $num++;
 
@@ -435,7 +435,7 @@
               $size=$row['size'];
               $id=$row['productid'];
 
-              $price=$price/2;
+              // $price=$price/2;
 
               $num++;
 
@@ -484,7 +484,7 @@
               $size=$row['size'];
               $id=$row['productid'];
 
-              $price=$price/2;
+              // $price=$price/2;
 
               $num++;
 
@@ -533,7 +533,7 @@
               $size=$row['size'];
               $id=$row['productid'];
 
-              $price=$price/2;
+              // $price=$price/2;
 
               $num++;
 
@@ -582,7 +582,7 @@
               $size=$row['size'];
               $id=$row['productid'];
 
-              $price=$price/2;
+              // $price=$price/2;
 
               $num++;
 
@@ -631,7 +631,7 @@
               $size=$row['size'];
               $id=$row['productid'];
 
-              $price=$price/2;
+              // $price=$price/2;
 
               $num++;
 
@@ -681,7 +681,7 @@
               $size=$row['size'];
               $id=$row['productid'];
 
-              $price=$price/2;
+              // $price=$price/2;
 
               $num++;
 
@@ -731,7 +731,7 @@
               $size=$row['size'];
               $id=$row['productid'];
 
-              $price=$price/2;
+              // $price=$price/2;
 
               $num++;
 
@@ -781,7 +781,7 @@
               $size=$row['size'];
               $id=$row['productid'];
 
-              $price=$price/2;
+              // $price=$price/2;
 
               $num++;
 

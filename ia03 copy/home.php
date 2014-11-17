@@ -4,8 +4,6 @@
 	include 'includes/connect_to_mysql.php';
 	include 'includes/header.php';
 
-	
-	session_start(); 
 	error_reporting(E_ALL);
 ?>
 

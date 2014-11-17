@@ -703,7 +703,9 @@ form input[type="password"] {
 	vertical-align: top;
 	font-family: 'Poiret One', cursive;
 }
-
+#logout_client{
+	text-decoration: none;
+}
 
 /*Cart Content*/
 .cartimage{
@@ -990,7 +992,7 @@ form input[type="password"] {
 	width: 18%;
 	display: inline-block;
 }
-#clientDesc button{
+#clientDesc button, #clientDesc input[type="submit"]{
 	margin: 0 auto;
 	margin-top: 5%;
 	width: 75%;

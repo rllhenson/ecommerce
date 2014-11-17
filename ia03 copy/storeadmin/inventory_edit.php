@@ -101,7 +101,7 @@ if (isset($_GET['pid'])) {
 if(isset($_GET['logout'])) {
 unset($_SESSION["adminsuser"]); 
 setcookie($_COOKIE['adminuser'],'',time()-3600);
-session_destroy();
+// session_destroy();
 header('Location: ../home.php');
 exit;
 }
