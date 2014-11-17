@@ -17,6 +17,15 @@
 	margin-left: 3%;
 	margin-top: 50px;
 }
+#wrong p{
+	color: white;
+	padding: 2%;
+	font-family: 'Poiret One', cursive;
+}
+#wrong a{
+	color: white;
+	font-family: 'Poiret One', cursive;
+}
 
 
 /*This is all of my header stuff*/
@@ -1732,6 +1741,7 @@ td form input[type="text"]{
 	background-color: white;
 	border: white;
 }
+
 .sitelink{
 	margin-top: 5%;
 	margin-right: 8%;
