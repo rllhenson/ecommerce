@@ -1723,12 +1723,23 @@ td form input[type="text"]{
 }
 
 /*footer stuff*/
+.content .sitelink{
+	margin-top: 5%;
+	margin-right: 8%;
+	text-align: right;
+	font-family: 'Poiret One', cursive;
+	color: #32373a;
+	background-color: white;
+	border: white;
+}
 .sitelink{
 	margin-top: 5%;
 	margin-right: 8%;
 	text-align: right;
 	font-family: 'Poiret One', cursive;
 	color: #32373a;
+	background-color: white;
+	border: white;
 }
 
 .footer{

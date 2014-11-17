@@ -109,5 +109,5 @@ $count=$result->num_rows;
     <!--end of content div-->
 
 <?php 
-include 'footer.php'; 
+include 'includes/footer.php'; 
 ?>

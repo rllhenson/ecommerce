@@ -6,7 +6,7 @@
 	<title><?php print $pageTitle; ?></title>
 
 	<link rel="stylesheet" href="css/reset.css"/>
-	<link rel="stylesheet" href="css/edit.css"/>
+	<link rel="stylesheet" href="css/styles.css"/>
 	<script type="text/javascript" src="js/process_form.js"></script>
 </head>
 
@@ -16,12 +16,12 @@
 	<div class="header">
 
 		<form  action='catalog.php' method='post'>
-        <div class="logo">
-			<a href="home.php"><img src="img/logo1.png" alt="Floor Five Interior Designs"/></a>
-		</div>
+	        <div class="logo">
+				<a href="home.php"><img src="img/logo1.png" alt="Floor Five Interior Designs"/></a>
+			</div>
         
-        <div class="space_between_logo">
-		</div>
+	        <div class="space_between_logo">
+			</div>
         
 			<div class="log_search">
 				<div class="log">

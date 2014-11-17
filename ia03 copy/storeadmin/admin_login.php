@@ -40,16 +40,17 @@ if (isset($_POST["username"]) && isset($_POST["password"])) {
       <div class="topbar">
         <h2>Please Log In To Manage the Store</h2>
         <div class="textbox">
-        <form id="form1" name="form1" method="post" action="admin_login.php">
-          <input name="username" type="text" id="username" size="40" />
-          <input name="password" type="password" id="password" size="40" />
-          <input type="submit" name="button" id="button" value="Log In" />
-        </form>
+          <form id="form1" name="form1" method="post" action="admin_login.php">
+            <input name="username" type="text" id="username" size="40" />
+            <input name="password" type="password" id="password" size="40" />
+            <input type="submit" name="button" id="button" value="Log In" />
+          </form>
+        </div>
+        <br />
+        <br />
+        <br />
       </div>
-      <br />
-    <br />
-    <br />
     </div>
   </div>
 </div>
-<?php include_once("../includes/footer.php");?>
+<?php include("../includes/footer_admin.php");?>

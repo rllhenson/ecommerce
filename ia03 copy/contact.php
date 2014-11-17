@@ -20,7 +20,7 @@
 							<h4>Message</h4>
 							<!-- make this a superbig text box -->
 							<form action="#" name="submitcontact" method="post">
-							<textarea rows="4">We would love to hear from you. Please enter a question or comment here...</textarea>
+							<textarea rows="4" placeholder="We would love to hear from you. Please enter a question or comment here..."></textarea>
 							<button type="button" onClick="submitContactForm(this.submitcontact)">Send Message</button>
 						</form>
 					</div>
