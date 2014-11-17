@@ -561,7 +561,7 @@
 	font-size: 1.5em;
 	padding-top: 2%;
 }
-.catalog_desc input, td form input[type="submit"], #form1 input{
+.catalog_desc input, td form input[type="submit"], #adminLogin input{
 	margin-top: 10%;
 	padding: 2%;
 	font-family: 'Poiret One', cursive;

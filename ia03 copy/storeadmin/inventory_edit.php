@@ -78,24 +78,6 @@ if (isset($_GET['pid'])) {
   else {
     exit();
   }
-/*
-	$targetID = $_GET['pid'];
-    $sql = mysql_query("SELECT * FROM products WHERE productid='$targetID' LIMIT 1");
-    $productCount = mysql_num_rows($sql); // count the output amount
-    if ($productCount > 0) {
-	    while($row = mysql_fetch_array($sql)){ 
-             
-			 $product_name = $row["product_name"];
-			 $price = $row["price"];
-			 $category = $row["category"];
-			 $subcategory = $row["subcategory"];
-			 $details = $row["details"];
-			 $date_added = strftime("%b %d, %Y", strtotime($row["date_added"]));
-        }
-    } else {
-	    echo "Sorry dude that crap dont exist.";
-		exit();
-    }*/
 }
 
 if(isset($_GET['logout'])) {
