@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +7,7 @@
 	<title><?php print $pageTitle; ?></title>
 
 	<link rel="stylesheet" href="../css/reset.css"/>
-	<link rel="stylesheet" href="../css/edit.css"/>
+	<link rel="stylesheet" href="../css/styles.css"/>
 </head>
 
 <body>
