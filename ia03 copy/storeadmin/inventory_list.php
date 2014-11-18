@@ -43,15 +43,15 @@ if (isset($_GET['yesdelete'])) {
 // Parse the form data and add inventory item to the system
 if (isset($_POST['product_name'])) {
 	
-  $product_name = mysql_real_escape_string($_POST['product_name']);
-  $description = mysql_real_escape_string($_POST['description']);
-  $category = mysql_real_escape_string($_POST['category']);
-  $sku = mysql_real_escape_string($_POST['sku']);
-  $stock = mysql_real_escape_string($_POST['stock']);
-	$cost = mysql_real_escape_string($_POST['cost']);
-  $price = mysql_real_escape_string($_POST['price']);
-	$weight = mysql_real_escape_string($_POST['weight']);
-  $size = mysql_real_escape_string($_POST['size']);
+  $product_name = mysqli_real_escape_string($mysqli,$_POST['product_name']);
+  $description = mysqli_real_escape_string($mysqli,$_POST['description']);
+  $category = mysqli_real_escape_string($mysqli,$_POST['category']);
+  $sku = mysqli_real_escape_string($mysqli,$_POST['sku']);
+  $stock = mysqli_real_escape_string($mysqli,$_POST['stock']);
+	$cost = mysqli_real_escape_string($mysqli,$_POST['cost']);
+  $price = mysqli_real_escape_string($mysqli,$_POST['price']);
+	$weight = mysqli_real_escape_string($mysqli,$_POST['weight']);
+  $size = mysqli_real_escape_string($mysqli,$_POST['size']);
 	// Check to see if product exists
   $myquery = "SELECT productid FROM products WHERE name='$product_name' LIMIT 1";
   $result=$mysqli->query($myquery)
@@ -67,7 +67,7 @@ if (isset($_POST['product_name'])) {
   $target_dir = "../img/";
   $target_file = $target_dir . basename($_FILES["fileField"]["name"]);
   $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-  $check = getimagesize($_FILES["fileField"]["tmp_name"]);
+  $check = getimagesize($_FILES["fileField"]["name"]);
   if($check !== false) {
       $uploadOk = 1;
   } else {
@@ -84,12 +84,13 @@ if (isset($_POST['product_name'])) {
   }
   if($imageFileType != "jpg" && $imageFileType != "jpeg") {
       exit();
-      $uploadOk = 0;
   }
-  if ($uploadOk == 0)
+  if ($uploadOk == 0){
+    echo 'Exiting';
     exit();
+    }
   else {
-    move_uploaded_file($_FILES["fileField"]["tmp_name"], $target_file);
+    move_uploaded_file($_FILES["fileField"]["name"], $target_file);
   }
   $prodimg=basename( $_FILES["fileField"]["name"]);
   //Finally, upload all data to database
@@ -110,15 +111,18 @@ $productCount=$result->num_rows;
 if ($productCount > 0) {
   $product_list.="<table id='productTable'>";
   $product_list.="<tr>
-          <th class='id'>ID</th><th class='product_name'>NAME</th><th class='price'>PRICE</th><th class='edit'>EDIT &nbsp;</th><th  class='delete'>DELETE</th>
+ <th>ID</th><th>NAME</th><th>Stock</th><th>Cost</th><th>PRICE</th><th>EDIT &nbsp;</th><th >DELETE</th>
          </tr>";
 	while($row=$result->fetch_assoc()){ 
        $id = $row["productid"];
 			 $product_name = $row["name"];
+       $sku = $row["sku"];
+       $stock = $row["stock"];
+       $cost = $row["cost"];
 			 $price = $row["price"];
 			 $product_list .= "
          <tr>
-          <td class='id'>$id</td><td class='product_name'>$product_name</td><td class='price'>$$price</td><td class='edit'><a href='inventory_edit.php?pid=$id'>edit</a></td><td class='delete'><a href='inventory_list.php?deleteid=$id'>delete</a><br /></td>
+          <td>$id</td><td>$product_name</td><td>$sku</td><td>$stock</td><td>$$cost</td><td>$$price</td><td><a href='inventory_edit.php?pid=$id'>edit</a></td><td><a href='inventory_list.php?deleteid=$id'>delete</a><br /></td>
          </tr>";
     }
     $product_list.="</table>";
@@ -206,5 +210,5 @@ exit;
   </div>
 </div>
 
-<?php include_once("../includes/footer_admin.php");?>
+<?php include '../includes/footer_admin.php';?>
 

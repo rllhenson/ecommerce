@@ -1337,6 +1337,7 @@ td form input[type="text"]{
 #admincontent h2{
 	color: #32373a;
 	font-size: 2em;
+  padding-bottom: 10px;
 }
 #admincontent hr{
 	border:0;
@@ -1359,36 +1360,15 @@ td form input[type="text"]{
 	border:none;
 	font-size: 1.2em;
 	width: 30%;
-}		
-#admincontent table{
-  width: 100%;
-  margin: 15px 0px;
+}
+#admincontent a{
+  color: #32373a;
 }
 #productTable{
   font-family: Helvetica, sans-serif;
-}	
-#productTable th {
-  border-bottom: 1px #32373a solid;
 }
-#productTable .id {
-  width: 5%;
-  text-align: right;
-}
-#productTable .product_name {
-  width: 30%;
-  text-align:left;
-}
-#productTable .price {
-  width: 25%;
-  text-align: right;
-}
-#productTable .edit {
-  width: 20%;
-  text-align: left;
-}
-#productTable .delete {
-  width: 20%;
-  text-align: left;
+#productTable td, #productTable th{
+  padding: 5px 10px 5px 0;
 }
 #orders{
 	padding: 1%;

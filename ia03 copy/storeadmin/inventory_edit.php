@@ -29,16 +29,16 @@ ini_set('display_errors', '1');
 <?php 
 // Parse the form data and add inventory item to the system
 if (isset($_POST['product_name'])) {
-  $pid = mysql_real_escape_string($_POST['thisID']);
-  $product_name = mysql_real_escape_string($_POST['product_name']);
-  $description = mysql_real_escape_string($_POST['description']);
-  $category = mysql_real_escape_string($_POST['category']);
-  $sku = mysql_real_escape_string($_POST['sku']);
-  $stock = mysql_real_escape_string($_POST['stock']);
-	$cost = mysql_real_escape_string($_POST['cost']);
-  $price = mysql_real_escape_string($_POST['price']);
-	$weight = mysql_real_escape_string($_POST['weight']);
-  $size = mysql_real_escape_string($_POST['size']);
+  $pid = mysqli_real_escape_string($mysqli,$_POST['thisID']);
+  $product_name = mysqli_real_escape_string($mysqli,$_POST['product_name']);
+  $description = mysqli_real_escape_string($mysqli,$_POST['description']);
+  $category = mysqli_real_escape_string($mysqli,$_POST['category']);
+  $sku = mysqli_real_escape_string($mysqli,$_POST['sku']);
+  $stock = mysqli_real_escape_string($mysqli,$_POST['stock']);
+	$cost = mysqli_real_escape_string($mysqli,$_POST['cost']);
+  $price = mysqli_real_escape_string($mysqli,$_POST['price']);
+	$weight = mysqli_real_escape_string($mysqli,$_POST['weight']);
+  $size = mysqli_real_escape_string($mysqli,$_POST['size']);
   
   if ($_FILES['fileField']['tmp_name'] != "") {
 	    // Place image in the folder 
@@ -145,7 +145,7 @@ exit;
           </tr>
           <tr>
             <td>Size</td>
-            <td><input name="size" type="text" id="size" /></td>
+            <td><input name="size" type="text" id="size" value="<?php echo $targetID; ?>"/></td>
           </tr>
           <tr>
             <td>&nbsp;</td>
