@@ -1409,7 +1409,7 @@ td form input[type="text"]{
 
 	display: inline-block;
 	text-align: left;
-	padding-left: 10%;
+	padding-left: 0%;
 }
 #stockstuff p{
 	display: inline-block;
@@ -1776,7 +1776,7 @@ td form input[type="text"]{
 
 /* Breakpoint query*/
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 1024px) {
     /* phones */
 	
 	/* Header */

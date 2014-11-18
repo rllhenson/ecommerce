@@ -20,6 +20,12 @@ include "connect_to_mysql.php";
 			VALUES ('$fname', '$lname', '$address', '$city', '$state', '$zip', '$email', '$pword', '$uname')")/* insert the data to the food_menu table*/
 		    or die ("Could not add the data to table");//error message
 
+	   	$_SESSION["id"] = $id;
+	   	$_SESSION["clientuser"] = $clientuser;
+	   	$_SESSION["clientpass"] = $clientpass;
+	   	header("location: ../client.php");
+	    exit();
+
 	}else if(isset($_POST['signaction'])&&$_POST['signaction']=='Customer Login'){
 	// else if (isset($_POST["user"]) && isset($_POST["pass"])) {
 
