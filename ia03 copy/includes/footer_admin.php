@@ -4,8 +4,8 @@
 
 
 	<div class="footer">
-		<p>This site is not official and is an assignment for a UCF Digital Media Course. <a href="admin_login.php">Admin Login</a></p>
-		<p>Designed by Floor 5</p>
+		<p>This site is not official and is an assignment for a UCF Digital Media Course.</p>
+		<p>Designed by Floor 5 <a href="admin_login.php">Admin Login</a></p>
 	</div>
 </body>
 
