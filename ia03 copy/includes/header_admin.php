@@ -1,12 +1,11 @@
 <?php
-//session_start();
-if(isset($_SESSION["adminuser"])){
-          $inorout= '<a href="?logout"><h4>logout</h4></a>';
-        }
-        else {
-          $inorout= '<a href="admin_login.php"><h4>signin</h4></a>';
-        }
-        ?>
+	session_start();
+	if(isset($_SESSION["adminuser"])){
+	  $inorout= '<a href="?logout"><h4>logout</h4></a>';
+	}else{
+	  $inorout= '<a href="admin_login.php"><h4>signin</h4></a>';
+	}
+?>
 
 <!DOCTYPE html>
 <html>
