@@ -1337,6 +1337,7 @@ td form input[type="text"]{
 #admincontent h2{
 	color: #32373a;
 	font-size: 2em;
+  padding-bottom: 10px;
 }
 
 
@@ -1375,8 +1376,16 @@ td form input[type="text"]{
 	border:none;
 	font-size: 1.2em;
 	width: 30%;
-
-}			
+}
+#admincontent a{
+  color: #32373a;
+}
+#productTable{
+  font-family: Helvetica, sans-serif;
+}
+#productTable td, #productTable th{
+  padding: 5px 10px 5px 0;
+}
 #orders{
 	padding: 1%;
 	margin-bottom: 1%;
@@ -1425,7 +1434,7 @@ td form input[type="text"]{
 
 	display: inline-block;
 	text-align: left;
-	padding-left: 10%;
+	padding-left: 0%;
 }
 #stockstuff p{
 	display: inline-block;
@@ -1792,7 +1801,7 @@ td form input[type="text"]{
 
 /* Breakpoint query*/
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 1024px) {
     /* phones */
 	
 	/* Header */

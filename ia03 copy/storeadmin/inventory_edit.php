@@ -1,7 +1,7 @@
 <?php 
 $pageTitle='FloorFive Admin Log In';
 include '../includes/header_admin.php';
-session_start();
+// session_start();
 if (!isset($_SESSION["adminuser"])) {
     header("location: admin_login.php"); 
     exit();
@@ -29,29 +29,37 @@ ini_set('display_errors', '1');
 <?php 
 // Parse the form data and add inventory item to the system
 if (isset($_POST['product_name'])) {
-  $pid = mysql_real_escape_string($_POST['thisID']);
-  $product_name = mysql_real_escape_string($_POST['product_name']);
-  $description = mysql_real_escape_string($_POST['description']);
-  $category = mysql_real_escape_string($_POST['category']);
-  $sku = mysql_real_escape_string($_POST['sku']);
-  $stock = mysql_real_escape_string($_POST['stock']);
-	$cost = mysql_real_escape_string($_POST['cost']);
-  $price = mysql_real_escape_string($_POST['price']);
-	$weight = mysql_real_escape_string($_POST['weight']);
-  $size = mysql_real_escape_string($_POST['size']);
+  $pid = mysqli_real_escape_string($mysqli,$_POST['thisID']);
+  $product_name = mysqli_real_escape_string($mysqli,$_POST['product_name']);
+  $description = mysqli_real_escape_string($mysqli,$_POST['description']);
+  $category = mysqli_real_escape_string($mysqli,$_POST['category']);
+  $sku = mysqli_real_escape_string($mysqli,$_POST['sku']);
+  $stock = mysqli_real_escape_string($mysqli,$_POST['stock']);
+	$cost = mysqli_real_escape_string($mysqli,$_POST['cost']);
+  $price = mysqli_real_escape_string($mysqli,$_POST['price']);
+	$weight = mysqli_real_escape_string($mysqli,$_POST['weight']);
+  $size = mysqli_real_escape_string($mysqli,$_POST['size']);
   
   if ($_FILES['fileField']['tmp_name'] != "") {
 	    // Place image in the folder 
-	    $newname = basename( $_FILES["fileField"]["tmp_name"]);
-	    move_uploaded_file($_FILES['fileField']['tmp_name'], "../img/$newname");
-	}
-  $prodimg=basename( $_FILES["fileField"]["tmp_name"]);
-  $myquery = "UPDATE products SET name='$product_name', description='$description', category='$category', sku='$sku', stock='$stock', cost='$cost', price='$price', prodimg='$prodimg', weight='$weight', size='$size' WHERE productid='$pid'";
-  $result=$mysqli->query($myquery)
-    or die ($mysqli->error);
-    
-  header("location: inventory_list.php"); 
-    exit();
+	    $prodimg = basename( $_FILES["fileField"]["tmp_name"]);
+	    move_uploaded_file($_FILES['fileField']['tmp_name'], "../img/$prodimg");
+      
+       $myquery = "UPDATE products SET name='$product_name', description='$description', category='$category', sku='$sku', stock='$stock', cost='$cost', price='$price', prodimg='$prodimg', weight='$weight', size='$size' WHERE productid='$pid'";
+      $result=$mysqli->query($myquery)
+        or die ($mysqli->error);
+        
+      header("location: inventory_list.php"); 
+        exit();
+	} else {
+    echo basename($_FILES['fileField']['tmp_name']);
+    $myquery = "UPDATE products SET name='$product_name', description='$description', category='$category', sku='$sku', stock='$stock', cost='$cost', price='$price', weight='$weight', size='$size' WHERE productid='$pid'";
+    $result=$mysqli->query($myquery)
+        or die ($mysqli->error);
+    header("location: inventory_list.php"); 
+      exit();
+  }
+ 
 }
 ?>
 <?php 
@@ -71,6 +79,7 @@ if (isset($_GET['pid'])) {
       $stock = $row['stock'];
       $cost = $row['cost'];
       $price = $row['price'];
+      $prodimg = $row['prodimg'];
       $weight = $row['weight'];
       $size = $row['size'];
     }
@@ -78,95 +87,87 @@ if (isset($_GET['pid'])) {
   else {
     exit();
   }
-/*
-	$targetID = $_GET['pid'];
-    $sql = mysql_query("SELECT * FROM products WHERE productid='$targetID' LIMIT 1");
-    $productCount = mysql_num_rows($sql); // count the output amount
-    if ($productCount > 0) {
-	    while($row = mysql_fetch_array($sql)){ 
-             
-			 $product_name = $row["product_name"];
-			 $price = $row["price"];
-			 $category = $row["category"];
-			 $subcategory = $row["subcategory"];
-			 $details = $row["details"];
-			 $date_added = strftime("%b %d, %Y", strtotime($row["date_added"]));
-        }
-    } else {
-	    echo "Sorry dude that crap dont exist.";
-		exit();
-    }*/
 }
 
 if(isset($_GET['logout'])) {
 unset($_SESSION["adminsuser"]); 
 setcookie($_COOKIE['adminuser'],'',time()-3600);
-// session_destroy();
+session_destroy();
 header('Location: ../home.php');
 exit;
 }
 ?>
 
-  <div class="cartimage">
-		<div id="cartcontent">
-      <div align="right" style="margin-right:32px;"><a href="inventory_list.php#inventoryForm">+ Add New Inventory Item</a></div>
+  <div class="adminimage">
+		<div id="admincontent">
+    <h2>Add New Inventory Item Form</h2>
+      <a href="inventory_list.php#inventoryForm">+ Add New Inventory Item</a>
       <hr />
       <a name="inventoryForm" id="inventoryForm"></a>
-      <h3>
-      &darr; Add New Inventory Item Form &darr;
-      </h3>
-      <form id="addProduct" action="inventory_edit.php" enctype="multipart/form-data" name="myForm" id="myform" method="post">
-      <table>
-      <tr>
-          <td>Name</td>
-          <td><input name="product_name" type="text" id="product_name" value="<?php echo $product_name; ?>"/></td>
-        </tr>
+      <div id="stockstuff">
+        <form id="addProduct" action="inventory_edit.php" enctype="multipart/form-data" name="myForm" id="myform" method="post">
+        <table>
         <tr>
-          <td>Description</td>
-          <td><textarea name="description" id="description" cols="32" rows="3"><?php echo $description; ?></textarea></td>
-        </tr>
-        <tr>
-          <td>Category</td>
-          <td><input name="category" type="text" id="category" value="<?php echo $category; ?>"/></td>
-        </tr>
-        <tr>
-          <td>SKU</td>
-          <td><input name="sku" type="text" id="sku" value="<?php echo $sku; ?>"/></td>
-        </tr>
-        <tr>
-          <td>Stock</td>
-          <td><input name="stock" type="text" id="stock" value="<?php echo $stock; ?>"/></td>
-        </tr>
-        <tr>
-          <td>Cost</td>
-          <td><input name="cost" type="number" id="cost" value="<?php echo $cost; ?>"/></td>
-        </tr>
-        <tr>
-          <td>Price</td>
-          <td><input name="price" type="number" id="price" value="<?php echo $price; ?>"/></td>
-        </tr>
-        <tr>
-          <td>Image</td>
-          <td><input type="file" name="fileField" id="fileField" /></td>
-        </tr>
-        <tr>
-          <td>Weight</td>
-          <td><input name="weight" type="text" id="weight" value="<?php echo $weight; ?>"/></td>
-        </tr>
-        <tr>
-          <td>Size</td>
-          <td><input name="size" type="text" id="size" value="<?php echo $size; ?>"/></td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-          <td>
-          <input name="thisID" type="hidden" value="<?php echo $targetID; ?>" />
-          <input type="submit" name="button" id="button" value="Update Item" /></td>
-        </tr>
-      
-      </table>
-      </form>
+            <td>Name</td>
+            <td><input name="product_name" type="text" id="product_name" value="<?php echo $product_name; ?>"/></td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td><textarea name="description" id="description" cols="32" rows="3"><?php echo $description; ?></textarea></td>
+          </tr>
+          <tr>
+            <td>Category</td>
+            <td>
+            <select name="category" id="category">
+              <option value="<?php echo $category; ?>"></option>
+              <option value="shag">Shag</option>
+              <option value="modern">Modern</option>
+              <option value="floral">Floral</option>
+              <option value="traditional">Traditional</option>
+              <option value="woven">Woven</option>
+            </select></td>
+          </tr>
+          <tr>
+            <td>SKU</td>
+            <td><input name="sku" type="text" id="sku" value="<?php echo $sku; ?>"/></td>
+          </tr>
+          <tr>
+            <td>Stock</td>
+            <td><input name="stock" type="text" id="stock" value="<?php echo $stock; ?>"/></td>
+          </tr>
+          <tr>
+            <td>Cost</td>
+            <td><input name="cost" type="number" id="cost" value="<?php echo $cost; ?>"/></td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td><input name="price" type="number" id="price" value="<?php echo $price; ?>"/></td>
+          </tr>
+          <tr>
+            <td>Image</td>
+            <td><input type="file" name="fileField" id="fileField" value="<?php echo $prodimg; ?>"/></td>
+          </tr>
+          <tr>
+            <td>Weight</td>
+            <td><input name="weight" type="text" id="weight" value="<?php echo $weight; ?>"/></td>
+          </tr>
+          <tr>
+            <td>Size</td>
+            <td><input name="size" type="text" id="size" value="<?php echo $size; ?>"/></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>
+            <input name="thisID" type="hidden" value="<?php echo $targetID; ?>" />
+            <input type="submit" name="button" id="button" value="Update Item" /></td>
+          </tr>
+        
+        </table>
+        </form>
+      </div>
     </div>
   </div>
 </div>
-<?php include_once("../includes/footer.php");?>
+
+<?php include_once("../includes/footer_admin.php");?>
+

@@ -1,3 +1,12 @@
+<?php
+	session_start();
+	if(isset($_SESSION["adminuser"])){
+	  $inorout= '<a href="?logout"><h4>logout</h4></a>';
+	}else{
+	  $inorout= '<a href="admin_login.php"><h4>signin</h4></a>';
+	}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +15,9 @@
 	<title><?php print $pageTitle; ?></title>
 
 	<link rel="stylesheet" href="../css/reset.css"/>
-	<link rel="stylesheet" href="../css/edit.css"/>
+	<link rel="stylesheet" href="../css/styles.css"/>
+	<script type="text/javascript" src="../js/process_form.js"></script>
+    <script type="text/javascript" src="../js/google_analytics_tracking.js"></script>
 </head>
 
 <body>
@@ -23,7 +34,9 @@
 
 		<div class="log_search">
 			<div class="log">
-				<a href="?logout"><h4>logout</h4></a>
+
+        <?php echo $inorout;?>
+
 			</div>
 		</div>
 	</div>

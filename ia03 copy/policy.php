@@ -2,6 +2,7 @@
 	$pageTitle='FloorFive Policies';
 	include 'includes/header.php';
 	include 'includes/connect_to_mysql.php';
+	
 	session_start(); 
 	error_reporting(E_ALL);
 ?>

@@ -3,6 +3,7 @@ $pageTitle='FloorFive Cart';
 include 'includes/header.php';
 include 'includes/connect_to_mysql.php';
 
+
 error_reporting(E_ALL);
 ?>
 <?php

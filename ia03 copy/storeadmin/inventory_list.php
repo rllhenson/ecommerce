@@ -1,7 +1,7 @@
 <?php 
 $pageTitle='FloorFive Admin Edit';
 include '../includes/header_admin.php';
-session_start();
+// session_start();
 if (!isset($_SESSION["adminuser"])) {
     header("location: admin_login.php"); 
     exit();
@@ -37,34 +37,21 @@ if (isset($_GET['yesdelete'])) {
   $myquery = "DELETE FROM products WHERE productid='$id_to_delete' LIMIT 1";
   $result=$mysqli->query($myquery)
     or die ($mysqli->error);
-	// remove item from system and delete its picture
-	// delete from database
-  /*
-	$id_to_delete = $_GET['yesdelete'];
-	$sql = mysql_query("DELETE FROM products WHERE id='$id_to_delete' LIMIT 1") or die (mysql_error());
-	// unlink the image from server
-	// Remove The Pic -------------------------------------------
-    $pictodelete = ("../img/$id_to_delete.jpg");
-    if (file_exists($pictodelete)) {
-       		    unlink($pictodelete);
-    }
-	header("location: inventory_list.php"); 
-    exit();*/
 }
 ?>
 <?php 
 // Parse the form data and add inventory item to the system
 if (isset($_POST['product_name'])) {
 	
-  $product_name = mysql_real_escape_string($_POST['product_name']);
-  $description = mysql_real_escape_string($_POST['description']);
-  $category = mysql_real_escape_string($_POST['category']);
-  $sku = mysql_real_escape_string($_POST['sku']);
-  $stock = mysql_real_escape_string($_POST['stock']);
-	$cost = mysql_real_escape_string($_POST['cost']);
-  $price = mysql_real_escape_string($_POST['price']);
-	$weight = mysql_real_escape_string($_POST['weight']);
-  $size = mysql_real_escape_string($_POST['size']);
+  $product_name = mysqli_real_escape_string($mysqli,$_POST['product_name']);
+  $description = mysqli_real_escape_string($mysqli,$_POST['description']);
+  $category = mysqli_real_escape_string($mysqli,$_POST['category']);
+  $sku = mysqli_real_escape_string($mysqli,$_POST['sku']);
+  $stock = mysqli_real_escape_string($mysqli,$_POST['stock']);
+	$cost = mysqli_real_escape_string($mysqli,$_POST['cost']);
+  $price = mysqli_real_escape_string($mysqli,$_POST['price']);
+	$weight = mysqli_real_escape_string($mysqli,$_POST['weight']);
+  $size = mysqli_real_escape_string($mysqli,$_POST['size']);
 	// Check to see if product exists
   $myquery = "SELECT productid FROM products WHERE name='$product_name' LIMIT 1";
   $result=$mysqli->query($myquery)
@@ -77,36 +64,18 @@ if (isset($_POST['product_name'])) {
   //See if product image can be uploaded.
   
   $uploadOk = 1;
-  $target_dir = "img/";
+  $target_dir = "../img/";
   $target_file = $target_dir . basename($_FILES["fileField"]["name"]);
   $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-  $check = getimagesize($_FILES["fileField"]["tmp_name"]);
-  if($check !== false) {
-      echo "File is an image - " . $check["mime"] . ".";
-      $uploadOk = 1;
-  } else {
-      echo "File is not an image.";
-      $uploadOk = 0;
-  }
-  if (file_exists($target_file)) {
-      echo "Sorry, file already exists.";
-      $uploadOk = 0;
-  }
-  if ($_FILES["fileField"]["size"] > 500000) {
-      echo "Sorry, your file is too large.";
-      $uploadOk = 0;
+  if ($_FILES["fileField"]["size"] > 1500000) {
+      //echo "Sorry, your file is too large.";
+      exit();
   }
   if($imageFileType != "jpg" && $imageFileType != "jpeg") {
       exit();
-      $uploadOk = 0;
   }
-  if ($uploadOk == 0)
-    exit();
-  else {
-    if (move_uploaded_file($_FILES["fileField"]["tmp_name"], $target_file)) {
-        echo "The file ". basename( $_FILES["fileField"]["name"]). " has been uploaded.";
-    }
-  }
+  move_uploaded_file($_FILES["fileField"]["name"], $target_file);
+
   $prodimg=basename( $_FILES["fileField"]["name"]);
   //Finally, upload all data to database
   $myquery = "INSERT INTO products (productid,name, description, category, sku, stock, cost, price, prodimg, weight, size) VALUES ('NULL','$product_name', '$description', '$category', '$sku', '$stock', '$cost','$price', '$prodimg', '$weight', '$size')";
@@ -114,23 +83,6 @@ if (isset($_POST['product_name'])) {
     or die ($mysqli->error);
   
 }
-  /*
-	$sql = mysql_query("SELECT id FROM products WHERE product_name='$product_name' LIMIT 1");
-	$productMatch = mysql_num_rows($sql); // count the output amount
-    if ($productMatch > 0) {
-		echo 'Sorry you tried to place a duplicate "Product Name" into the system, <a href="inventory_list.php">click here</a>';
-		exit();
-	}
-	// Add this product into the database now
-	$sql = mysql_query("INSERT INTO products (product_name, price, details, category, subcategory, date_added) 
-        VALUES('$product_name','$price','$details','$category','$subcategory',now())") or die (mysql_error());
-     $pid = mysql_insert_id();
-	// Place image in the folder 
-	$newname = "$pid.jpg";
-	move_uploaded_file( $_FILES['fileField']['tmp_name'], "../img/$newname");
-	header("location: inventory_list.php"); 
-    exit();
-}*/
 ?>
 <?php 
 // This block grabs the whole list for viewing
@@ -141,17 +93,20 @@ $result=$mysqli->query($myquery)
 $productCount=$result->num_rows;
 
 if ($productCount > 0) {
-  $product_list.="<table>";
+  $product_list.="<table id='productTable'>";
   $product_list.="<tr>
-          <td>ID</td><td>NAME</td><td>PRICE</td><td>EDIT &nbsp;</td><td>DELETE</td>
+ <th>ID</th><th>NAME</th><th>SKU</th><th>Stock</th><th>Cost</th><th>PRICE</th><th>EDIT &nbsp;</th><th >DELETE</th>
          </tr>";
 	while($row=$result->fetch_assoc()){ 
        $id = $row["productid"];
 			 $product_name = $row["name"];
+       $sku = $row["sku"];
+       $stock = $row["stock"];
+       $cost = $row["cost"];
 			 $price = $row["price"];
 			 $product_list .= "
          <tr>
-          <td>$id</td><td>$product_name</td><td>$$price</td><td><a href='inventory_edit.php?pid=$id'>edit</a></td><td><a href='inventory_list.php?deleteid=$id'>delete</a><br /></td>
+          <td>$id</td><td>$product_name</td><td>$sku</td><td>$stock</td><td>$$cost</td><td>$$price</td><td><a href='inventory_edit.php?pid=$id'>edit</a></td><td><a href='inventory_list.php?deleteid=$id'>delete</a><br /></td>
          </tr>";
     }
     $product_list.="</table>";
@@ -162,22 +117,22 @@ if ($productCount > 0) {
 if(isset($_GET['logout'])) {
 unset($_SESSION["adminsuser"]); 
 setcookie($_COOKIE['adminuser'],'',time()-3600);
-// session_destroy();
+//session_destroy();
 header('Location: ../home.php');
 exit;
 }
 ?>
 
-  <div class="cartimage">
-		<div id="cartcontent">
+  <div class="adminimage">
+		<div id="admincontent">
     <a href="inventory_list.php#inventoryForm">+ Add New Inventory Item</a>
-    <div align="left" style="margin-left:24px;">
+    <div>
       <h2>Inventory list</h2>
       <?php echo $product_list; ?>
     </div>
     <hr />
     <a name="inventoryForm" id="inventoryForm"></a>
-    <h2>&darr; Add New Inventory Item Form &darr;</h2>
+    <h2>Add New Inventory Item Form</h2>
       <form id="addProduct" action="inventory_list.php" enctype="multipart/form-data" name="myForm" id="myform" method="post">
       <table>
         <tr>
@@ -186,11 +141,20 @@ exit;
         </tr>
         <tr>
           <td>Description</td>
-          <td><textarea name="description" id="description" cols="32" rows="3"></textarea></td>
+          <td><textarea name="description" id="description" cols="32" rows="1"></textarea></td>
         </tr>
         <tr>
           <td>Category</td>
-          <td><input name="category" type="text" id="category"/></td>
+          <td>
+          <select name="category" id="category">
+            <option value=""></option>
+            <option value="shag">Shag</option>
+            <option value="modern">Modern</option>
+            <option value="floral">Floral</option>
+            <option value="traditional">Traditional</option>
+            <option value="woven">Woven</option>
+          </select>
+          </td>
         </tr>
         <tr>
           <td>SKU</td>
@@ -229,4 +193,6 @@ exit;
     </div>
   </div>
 </div>
-<?php include_once("../includes/footer.php");?>
+
+<?php include '../includes/footer_admin.php';?>
+

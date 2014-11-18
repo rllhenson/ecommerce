@@ -561,7 +561,7 @@
 	font-size: 1.5em;
 	padding-top: 2%;
 }
-.catalog_desc input, td form input[type="submit"], #form1 input{
+.catalog_desc input, td form input[type="submit"], #adminLogin input{
 	margin-top: 10%;
 	padding: 2%;
 	font-family: 'Poiret One', cursive;
@@ -1329,6 +1329,9 @@ td form input[type="text"]{
 	text-shadow: 2px 1px 4px #32373a;
 	opacity: .5;
 }	
+#admincontent td{
+  
+}
 #admincontent button{
 	margin-left: 2.5%;
 	margin-top: 5%;
@@ -1381,7 +1384,7 @@ td form input[type="text"]{
 
 }					
 #stockstuff{
-	padding-top: 1%;
+	padding-top: 10%;
 	padding-bottom: 1%;
 	margin-bottom: 1%;
 	background: -webkit-linear-gradient(top, rgba(50,55,58,0.2) 0%, rgba(50,55,58,0.1) 100%); /* For Safari 5.1 to 6.0 */
@@ -1391,7 +1394,7 @@ td form input[type="text"]{
 
 	display: inline-block;
 	text-align: left;
-	padding-left: 10%;
+	padding-left: 0%;
 }
 #stockstuff p{
 	display: inline-block;
@@ -1746,7 +1749,7 @@ td form input[type="text"]{
 
 /* Breakpoint query*/
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 1024px) {
     /* phones */
 	
 	/* Header */

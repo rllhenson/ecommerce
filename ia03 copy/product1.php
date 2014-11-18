@@ -3,6 +3,7 @@
 	$pageTitle='FloorFive Product Page';
 	include 'header.php';
 	include 'includes/connect_to_mysql.php';
+
 	session_start(); 
 	error_reporting(E_ALL);
 ?>
