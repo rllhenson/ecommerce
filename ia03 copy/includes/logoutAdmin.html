@@ -4,12 +4,10 @@
 	
 	unset($_SESSION["clientuser"]); 
 	unset($_SESSION["clientpass"]); 
-	unset($_SESSION["clientid"]); 
+	unset($_SESSION["id"]); 
 	// setcookie($_COOKIE['clientuser'],'',time()-3600);
 	// session_destroy();
 	header('Location: ../signin.php');
 	exit;
 
 ?>
-
-

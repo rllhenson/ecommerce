@@ -7,6 +7,7 @@ if(isset($_SESSION["adminuser"])){
           $inorout= '<a href="admin_login.php"><h4>signin</h4></a>';
         }
         ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,8 +33,9 @@ if(isset($_SESSION["adminuser"])){
 
 		<div class="log_search">
 			<div class="log">
+
         <?php echo $inorout;?>
-				
+
 			</div>
 		</div>
 	</div>

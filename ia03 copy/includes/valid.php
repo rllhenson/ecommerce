@@ -1,5 +1,6 @@
 <?php
 // validating login stuff
+$pageTitle='FloorFive Customer Log In';
 session_start();
 include "connect_to_mysql.php"; 
 
@@ -16,13 +17,30 @@ include "connect_to_mysql.php";
 		$pword = $_REQUEST["password"];
 		$uname = $_REQUEST["username"];
 
-		$mysqli->query("INSERT INTO priv_users (fname, lname, address, city, state, zipcode, email, password, username) 
-			VALUES ('$fname', '$lname', '$address', '$city', '$state', '$zip', '$email', '$pword', '$uname')")/* insert the data to the food_menu table*/
-		    or die ("Could not add the data to table");//error message
+		$myquery = "SELECT * FROM priv_users";
+		$result=$mysqli->query($myquery)
+	    	or die ($mysqli->error);
+	    $count=$result->num_rows;
+	    while ($row=$result->fetch_assoc()) {
+	    	$newid = $row["userid"];
+	    	
+	    }
+	    $newid=$newid + 1;
 
-	   	$_SESSION["id"] = $id;
-	   	$_SESSION["clientuser"] = $clientuser;
-	   	$_SESSION["clientpass"] = $clientpass;
+// 	    ($link,"INSERT INTO web_formitem (`ID`, `formID`, `caption`, `key`, `sortorder`, `type`, `enabled`, `mandatory`, `data`)
+// VALUES (105, 7, 'Tip izdelka (6)', 'producttype_6', 42, 5, 1, 0, 0)")
+
+	    mysqli_query($mysqli,"INSERT INTO priv_users (fname, lname, address, city, state, zipcode, email, password, username) 
+			VALUES ('$fname', '$lname', '$address', '$city', '$state', '$zip', '$email', '$pword', '$uname')")
+		or die(mysqli_error($mysqli));
+
+		// $mysqli->query("INSERT INTO priv_users (fname, lname, address, city, state, zipcode, email, password, username) 
+		// 	VALUES ('$newid', $fname', '$lname', '$address', '$city', '$state', '$zip', '$email', '$pword', '$uname')")/* insert the data to the food_menu table*/
+		//     or die ("Could not add the data to table");//error message
+
+	   	$_SESSION["clientid"] = $newid;
+	   	$_SESSION["clientuser"] = $uname;
+	   	$_SESSION["clientpass"] = $pword;
 	   	header("location: ../client.php");
 	    exit();
 
@@ -52,7 +70,7 @@ include "connect_to_mysql.php";
 				$email = $row["email"];
 		  	}
 
-		   	$_SESSION["id"] = $id;
+		   	$_SESSION["clientid"] = $id;
 		   	$_SESSION["clientuser"] = $clientuser;
 		   	$_SESSION["clientpass"] = $clientpass;
 		   	header("location: ../client.php");
