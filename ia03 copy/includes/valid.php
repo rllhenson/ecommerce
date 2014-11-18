@@ -77,7 +77,7 @@ include "connect_to_mysql.php";
 		    exit();
 		} else {
 			include("../includes/header_client.php");
-		    echo "<div id='wrong'><p>That is the incorrect username or password, try again here <a href='../signin.php'>Customer Login</a>,
+		    echo "<div class='wrong'><p>That is the incorrect username or password, try again here <a href='../signin.php'>Customer Login</a>,
 		    or if you don't have an account, you can <a href='../signup.php'>Sign Up</a></p></div>";
 		    echo '</div>';
 		    include("../includes/footer.php");
