@@ -37,19 +37,6 @@ if (isset($_GET['yesdelete'])) {
   $myquery = "DELETE FROM products WHERE productid='$id_to_delete' LIMIT 1";
   $result=$mysqli->query($myquery)
     or die ($mysqli->error);
-	// remove item from system and delete its picture
-	// delete from database
-  /*
-	$id_to_delete = $_GET['yesdelete'];
-	$sql = mysql_query("DELETE FROM products WHERE id='$id_to_delete' LIMIT 1") or die (mysql_error());
-	// unlink the image from server
-	// Remove The Pic -------------------------------------------
-    $pictodelete = ("../img/$id_to_delete.jpg");
-    if (file_exists($pictodelete)) {
-       		    unlink($pictodelete);
-    }
-	header("location: inventory_list.php"); 
-    exit();*/
 }
 ?>
 <?php 
@@ -77,23 +64,22 @@ if (isset($_POST['product_name'])) {
   //See if product image can be uploaded.
   
   $uploadOk = 1;
-  $target_dir = "img/";
+  $target_dir = "../img/";
   $target_file = $target_dir . basename($_FILES["fileField"]["name"]);
   $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
   $check = getimagesize($_FILES["fileField"]["tmp_name"]);
   if($check !== false) {
-      echo "File is an image - " . $check["mime"] . ".";
       $uploadOk = 1;
   } else {
-      echo "File is not an image.";
+      //echo "File is not an image.";
       $uploadOk = 0;
   }
   if (file_exists($target_file)) {
-      echo "Sorry, file already exists.";
+      //echo "Sorry, file already exists.";
       $uploadOk = 0;
   }
-  if ($_FILES["fileField"]["size"] > 500000) {
-      echo "Sorry, your file is too large.";
+  if ($_FILES["fileField"]["size"] > 1500000) {
+      //echo "Sorry, your file is too large.";
       $uploadOk = 0;
   }
   if($imageFileType != "jpg" && $imageFileType != "jpeg") {
@@ -103,9 +89,7 @@ if (isset($_POST['product_name'])) {
   if ($uploadOk == 0)
     exit();
   else {
-    if (move_uploaded_file($_FILES["fileField"]["tmp_name"], $target_file)) {
-        echo "The file ". basename( $_FILES["fileField"]["name"]). " has been uploaded.";
-    }
+    move_uploaded_file($_FILES["fileField"]["tmp_name"], $target_file);
   }
   $prodimg=basename( $_FILES["fileField"]["name"]);
   //Finally, upload all data to database
@@ -124,9 +108,9 @@ $result=$mysqli->query($myquery)
 $productCount=$result->num_rows;
 
 if ($productCount > 0) {
-  $product_list.="<table>";
+  $product_list.="<table id='productTable'>";
   $product_list.="<tr>
-          <td>ID</td><td>NAME</td><td>PRICE</td><td>EDIT &nbsp;</td><td>DELETE</td>
+          <th class='id'>ID</th><th class='product_name'>NAME</th><th class='price'>PRICE</th><th class='edit'>EDIT &nbsp;</th><th  class='delete'>DELETE</th>
          </tr>";
 	while($row=$result->fetch_assoc()){ 
        $id = $row["productid"];
@@ -134,7 +118,7 @@ if ($productCount > 0) {
 			 $price = $row["price"];
 			 $product_list .= "
          <tr>
-          <td>$id</td><td>$product_name</td><td>$$price</td><td><a href='inventory_edit.php?pid=$id'>edit</a></td><td><a href='inventory_list.php?deleteid=$id'>delete</a><br /></td>
+          <td class='id'>$id</td><td class='product_name'>$product_name</td><td class='price'>$$price</td><td class='edit'><a href='inventory_edit.php?pid=$id'>edit</a></td><td class='delete'><a href='inventory_list.php?deleteid=$id'>delete</a><br /></td>
          </tr>";
     }
     $product_list.="</table>";
@@ -145,7 +129,7 @@ if ($productCount > 0) {
 if(isset($_GET['logout'])) {
 unset($_SESSION["adminsuser"]); 
 setcookie($_COOKIE['adminuser'],'',time()-3600);
-session_destroy();
+//session_destroy();
 header('Location: ../home.php');
 exit;
 }
@@ -173,7 +157,16 @@ exit;
         </tr>
         <tr>
           <td>Category</td>
-          <td><input name="category" type="text" id="category"/></td>
+          <td>
+          <select name="category" id="category">
+            <option value=""></option>
+            <option value="shag">Shag</option>
+            <option value="modern">Modern</option>
+            <option value="floral">Floral</option>
+            <option value="traditional">Traditional</option>
+            <option value="woven">Woven</option>
+          </select>
+          </td>
         </tr>
         <tr>
           <td>SKU</td>

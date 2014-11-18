@@ -1,7 +1,7 @@
 <?php 
 $pageTitle='FloorFive Admin Log In';
 include '../includes/header_admin.php';
-// session_start();
+session_start();
 if (!isset($_SESSION["adminuser"])) {
     header("location: admin_login.php"); 
     exit();

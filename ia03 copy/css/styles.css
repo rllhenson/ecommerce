@@ -1359,8 +1359,37 @@ td form input[type="text"]{
 	border:none;
 	font-size: 1.2em;
 	width: 30%;
-
-}			
+}		
+#admincontent table{
+  width: 100%;
+  margin: 15px 0px;
+}
+#productTable{
+  font-family: Helvetica, sans-serif;
+}	
+#productTable th {
+  border-bottom: 1px #32373a solid;
+}
+#productTable .id {
+  width: 5%;
+  text-align: right;
+}
+#productTable .product_name {
+  width: 30%;
+  text-align:left;
+}
+#productTable .price {
+  width: 25%;
+  text-align: right;
+}
+#productTable .edit {
+  width: 20%;
+  text-align: left;
+}
+#productTable .delete {
+  width: 20%;
+  text-align: left;
+}
 #orders{
 	padding: 1%;
 	margin-bottom: 1%;

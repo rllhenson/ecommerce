@@ -71,6 +71,7 @@ if (isset($_GET['pid'])) {
       $stock = $row['stock'];
       $cost = $row['cost'];
       $price = $row['price'];
+      $prodimg = $row['prodimg'];
       $weight = $row['weight'];
       $size = $row['size'];
     }
@@ -108,7 +109,15 @@ exit;
           </tr>
           <tr>
             <td>Category</td>
-            <td><input name="category" type="text" id="category" value="<?php echo $category; ?>"/></td>
+            <td>
+            <select name="category" id="category">
+              <option value="<?php echo $category; ?>"></option>
+              <option value="shag">Shag</option>
+              <option value="modern">Modern</option>
+              <option value="floral">Floral</option>
+              <option value="traditional">Traditional</option>
+              <option value="woven">Woven</option>
+            </select></td>
           </tr>
           <tr>
             <td>SKU</td>
@@ -128,7 +137,7 @@ exit;
           </tr>
           <tr>
             <td>Image</td>
-            <td><input type="file" name="fileField" id="fileField" /></td>
+            <td><input type="file" name="fileField" id="fileField" value="<?php echo $prodimg; ?>"/></td>
           </tr>
           <tr>
             <td>Weight</td>
@@ -136,7 +145,7 @@ exit;
           </tr>
           <tr>
             <td>Size</td>
-            <td><input name="size" type="text" id="size" value="<?php echo $size; ?>"/></td>
+            <td><input name="size" type="text" id="size" /></td>
           </tr>
           <tr>
             <td>&nbsp;</td>
