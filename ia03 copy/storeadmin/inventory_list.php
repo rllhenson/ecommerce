@@ -17,7 +17,7 @@ $result=$mysqli->query($myquery)
 $count=$result->num_rows;
 // ------- MAKE SURE PERSON EXISTS IN DATABASE ---------
 if ($count == 0) {
-	 echo "Your login session data is not on record in the database.";
+	 echo "<div class='wrong'><p>Your login session data is not on record in the database.</p></div>";
      exit();
 }
 ?>
@@ -29,7 +29,7 @@ ini_set('display_errors', '1');
 <?php 
 // Delete Item Question to Admin, and Delete Product if they choose
 if (isset($_GET['deleteid'])) {
-	echo 'Do you really want to delete product with ID of ' . $_GET['deleteid'] . '? <a href="inventory_list.php?yesdelete=' . $_GET['deleteid'] . '">Yes</a> | <a href="inventory_list.php">No</a>';
+	echo '<div class="wrong"><p>Do you really want to delete product with ID of ' . $_GET['deleteid'] . '? <a href="inventory_list.php?yesdelete=' . $_GET['deleteid'] . '">Yes</a> | <a href="inventory_list.php">No</a></p></div>';
 	exit();
 }
 if (isset($_GET['yesdelete'])) {
@@ -58,7 +58,7 @@ if (isset($_POST['product_name'])) {
     or die ($mysqli->error);
   $productMatch=$result->num_rows;
   if ($productMatch > 0) {
-		echo 'Sorry you tried to place a duplicate "Product Name" into the system, <a href="inventory_list.php">click here</a>';
+		echo '<div class="wrong"><p>Sorry you tried to place a duplicate "Product Name" into the system, <a href="inventory_list.php">click here</a></p></div>';
 		exit();
 	}
   //See if product image can be uploaded.
@@ -68,17 +68,18 @@ if (isset($_POST['product_name'])) {
   $target_file = $target_dir . basename($_FILES["fileField"]["name"]);
   $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
   if ($_FILES["fileField"]["size"] > 1500000) {
-      //echo "Sorry, your file is too large.";
+      echo '<div class="wrong"><p>Sorry your file is too large (1.5mb max), <a href="inventory_list.php">click here</a></p></div>';
       exit();
   }
   if($imageFileType != "jpg" && $imageFileType != "jpeg") {
+      echo '<div class="wrong"><p>Sorry your file needs to be a jpg, <a href="inventory_list.php">click here</a></p></div>';
       exit();
   }
   move_uploaded_file($_FILES["fileField"]["name"], $target_file);
 
   $prodimg=basename( $_FILES["fileField"]["name"]);
   //Finally, upload all data to database
-  $myquery = "INSERT INTO products (productid,name, description, category, sku, stock, cost, price, prodimg, weight, size) VALUES ('NULL','$product_name', '$description', '$category', '$sku', '$stock', '$cost','$price', '$prodimg', '$weight', '$size')";
+  $myquery = "INSERT INTO products (name, description, category, sku, stock, cost, price, prodimg, weight, size) VALUES ('$product_name', '$description', '$category', '$sku', '$stock', '$cost','$price', '$prodimg', '$weight', '$size')";
   $result=$mysqli->query($myquery)
     or die ($mysqli->error);
   

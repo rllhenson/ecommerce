@@ -17,12 +17,12 @@
 	margin-left: 3%;
 	margin-top: 50px;
 }
-#wrong p{
+.wrong p{
 	color: white;
 	padding: 2%;
 	font-family: 'Poiret One', cursive;
 }
-#wrong a{
+.wrong a{
 	color: white;
 	font-family: 'Poiret One', cursive;
 }
