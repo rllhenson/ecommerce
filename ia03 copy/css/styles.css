@@ -644,7 +644,7 @@ input[type=submit] {
 	background-color: #32373a;
 	color:white;
 	border:none;
-	font-size: 1.2em;
+	font-size: 1.5em;
 	padding-top: 2%;
 }
 
@@ -1338,6 +1338,22 @@ td form input[type="text"]{
 	color: #32373a;
 	font-size: 2em;
 }
+
+
+#admincontent a{
+
+	color: blue;
+	font-family: 'Poiret One', cursive;
+
+}
+
+
+#productTable td{
+	color: #32373a;
+	font-family: 'Poiret One', cursive;
+
+}
+
 #admincontent hr{
 	border:0;
 	height: 1px;
