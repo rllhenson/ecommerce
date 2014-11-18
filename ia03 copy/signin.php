@@ -2,8 +2,10 @@
 	$pageTitle='FloorFive Sign In';
 	include 'includes/header.php';
 	include 'includes/connect_to_mysql.php';
+
 	// include 'includes/google_analytics_tracking.js';
 
+	
 	// if(isset($_GET['logout'])) {
 	// 	unset($_SESSION["clientuser"]); 
 	// 	unset($_SESSION["clientpass"]); 

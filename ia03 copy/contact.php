@@ -2,7 +2,7 @@
 	$pageTitle='FloorFive Contact';
 	include 'includes/header.php';
 	include 'includes/connect_to_mysql.php';
-	include 'includes/google_analytics_tracking.js';
+
 
 	error_reporting(E_ALL);
 ?>

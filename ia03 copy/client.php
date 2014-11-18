@@ -6,7 +6,9 @@
 	// $clientuser=$_SESSION['clientuser'];
 	
 	// session_start(); 
+
 	// include 'includes/google_analytics_tracking.js';
+
 
 	error_reporting(E_ALL);
 
