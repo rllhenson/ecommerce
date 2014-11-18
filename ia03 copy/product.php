@@ -1,7 +1,7 @@
 <?php 
 $pageTitle='FloorFive Contact';
 include 'includes/header.php'; 
-include 'includes/google_analytics_tracking.js';
+
 
 ?>
 <?php
