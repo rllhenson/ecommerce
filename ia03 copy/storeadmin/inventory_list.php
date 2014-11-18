@@ -111,7 +111,7 @@ $productCount=$result->num_rows;
 if ($productCount > 0) {
   $product_list.="<table id='productTable'>";
   $product_list.="<tr>
- <th>ID</th><th>NAME</th><th>Stock</th><th>Cost</th><th>PRICE</th><th>EDIT &nbsp;</th><th >DELETE</th>
+ <th>ID</th><th>NAME</th><th>SKU</th><th>Stock</th><th>Cost</th><th>PRICE</th><th>EDIT &nbsp;</th><th >DELETE</th>
          </tr>";
 	while($row=$result->fetch_assoc()){ 
        $id = $row["productid"];
