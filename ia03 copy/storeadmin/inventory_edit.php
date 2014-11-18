@@ -42,16 +42,24 @@ if (isset($_POST['product_name'])) {
   
   if ($_FILES['fileField']['tmp_name'] != "") {
 	    // Place image in the folder 
-	    $newname = basename( $_FILES["fileField"]["tmp_name"]);
-	    move_uploaded_file($_FILES['fileField']['tmp_name'], "../img/$newname");
-	}
-  $prodimg=basename( $_FILES["fileField"]["tmp_name"]);
-  $myquery = "UPDATE products SET name='$product_name', description='$description', category='$category', sku='$sku', stock='$stock', cost='$cost', price='$price', prodimg='$prodimg', weight='$weight', size='$size' WHERE productid='$pid'";
-  $result=$mysqli->query($myquery)
-    or die ($mysqli->error);
-    
-  header("location: inventory_list.php"); 
-    exit();
+	    $prodimg = basename( $_FILES["fileField"]["tmp_name"]);
+	    move_uploaded_file($_FILES['fileField']['tmp_name'], "../img/$prodimg");
+      
+       $myquery = "UPDATE products SET name='$product_name', description='$description', category='$category', sku='$sku', stock='$stock', cost='$cost', price='$price', prodimg='$prodimg', weight='$weight', size='$size' WHERE productid='$pid'";
+      $result=$mysqli->query($myquery)
+        or die ($mysqli->error);
+        
+      header("location: inventory_list.php"); 
+        exit();
+	} else {
+    echo basename($_FILES['fileField']['tmp_name']);
+    $myquery = "UPDATE products SET name='$product_name', description='$description', category='$category', sku='$sku', stock='$stock', cost='$cost', price='$price', weight='$weight', size='$size' WHERE productid='$pid'";
+    $result=$mysqli->query($myquery)
+        or die ($mysqli->error);
+    header("location: inventory_list.php"); 
+      exit();
+  }
+ 
 }
 ?>
 <?php 
@@ -93,7 +101,7 @@ exit;
   <div class="adminimage">
 		<div id="admincontent">
     <h2>Add New Inventory Item Form</h2>
-      <div align="right" style="margin-right:32px;"><a href="inventory_list.php#inventoryForm">+ Add New Inventory Item</a></div>
+      <a href="inventory_list.php#inventoryForm">+ Add New Inventory Item</a>
       <hr />
       <a name="inventoryForm" id="inventoryForm"></a>
       <div id="stockstuff">
@@ -145,7 +153,7 @@ exit;
           </tr>
           <tr>
             <td>Size</td>
-            <td><input name="size" type="text" id="size" value="<?php echo $targetID; ?>"/></td>
+            <td><input name="size" type="text" id="size" value="<?php echo $size; ?>"/></td>
           </tr>
           <tr>
             <td>&nbsp;</td>

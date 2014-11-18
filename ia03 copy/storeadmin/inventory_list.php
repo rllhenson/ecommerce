@@ -67,31 +67,15 @@ if (isset($_POST['product_name'])) {
   $target_dir = "../img/";
   $target_file = $target_dir . basename($_FILES["fileField"]["name"]);
   $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-  $check = getimagesize($_FILES["fileField"]["name"]);
-  if($check !== false) {
-      $uploadOk = 1;
-  } else {
-      //echo "File is not an image.";
-      $uploadOk = 0;
-  }
-  if (file_exists($target_file)) {
-      //echo "Sorry, file already exists.";
-      $uploadOk = 0;
-  }
   if ($_FILES["fileField"]["size"] > 1500000) {
       //echo "Sorry, your file is too large.";
-      $uploadOk = 0;
+      exit();
   }
   if($imageFileType != "jpg" && $imageFileType != "jpeg") {
       exit();
   }
-  if ($uploadOk == 0){
-    echo 'Exiting';
-    exit();
-    }
-  else {
-    move_uploaded_file($_FILES["fileField"]["name"], $target_file);
-  }
+  move_uploaded_file($_FILES["fileField"]["name"], $target_file);
+
   $prodimg=basename( $_FILES["fileField"]["name"]);
   //Finally, upload all data to database
   $myquery = "INSERT INTO products (productid,name, description, category, sku, stock, cost, price, prodimg, weight, size) VALUES ('NULL','$product_name', '$description', '$category', '$sku', '$stock', '$cost','$price', '$prodimg', '$weight', '$size')";
