@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(isset($_SESSION["adminuser"])){
+          $inorout= '<a href="?logout"><h4>logout</h4></a>';
+        }
+        else {
+          $inorout= '<a href="admin_login.php"><h4>signin</h4></a>';
+        }
+        ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,7 +32,8 @@
 
 		<div class="log_search">
 			<div class="log">
-				<a href="?logout"><h4>logout</h4></a>
+        <?php echo $inorout;?>
+				
 			</div>
 		</div>
 	</div>

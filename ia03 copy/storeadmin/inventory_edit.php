@@ -89,65 +89,65 @@ exit;
 }
 ?>
 
-  <div class="cartimage">
-		<div id="cartcontent">
+  <div class="adminimage">
+		<div id="admincontent">
+    <h2>Add New Inventory Item Form</h2>
       <div align="right" style="margin-right:32px;"><a href="inventory_list.php#inventoryForm">+ Add New Inventory Item</a></div>
       <hr />
       <a name="inventoryForm" id="inventoryForm"></a>
-      <h3>
-      &darr; Add New Inventory Item Form &darr;
-      </h3>
-      <form id="addProduct" action="inventory_edit.php" enctype="multipart/form-data" name="myForm" id="myform" method="post">
-      <table>
-      <tr>
-          <td>Name</td>
-          <td><input name="product_name" type="text" id="product_name" value="<?php echo $product_name; ?>"/></td>
-        </tr>
+      <div id="stockstuff">
+        <form id="addProduct" action="inventory_edit.php" enctype="multipart/form-data" name="myForm" id="myform" method="post">
+        <table>
         <tr>
-          <td>Description</td>
-          <td><textarea name="description" id="description" cols="32" rows="3"><?php echo $description; ?></textarea></td>
-        </tr>
-        <tr>
-          <td>Category</td>
-          <td><input name="category" type="text" id="category" value="<?php echo $category; ?>"/></td>
-        </tr>
-        <tr>
-          <td>SKU</td>
-          <td><input name="sku" type="text" id="sku" value="<?php echo $sku; ?>"/></td>
-        </tr>
-        <tr>
-          <td>Stock</td>
-          <td><input name="stock" type="text" id="stock" value="<?php echo $stock; ?>"/></td>
-        </tr>
-        <tr>
-          <td>Cost</td>
-          <td><input name="cost" type="number" id="cost" value="<?php echo $cost; ?>"/></td>
-        </tr>
-        <tr>
-          <td>Price</td>
-          <td><input name="price" type="number" id="price" value="<?php echo $price; ?>"/></td>
-        </tr>
-        <tr>
-          <td>Image</td>
-          <td><input type="file" name="fileField" id="fileField" /></td>
-        </tr>
-        <tr>
-          <td>Weight</td>
-          <td><input name="weight" type="text" id="weight" value="<?php echo $weight; ?>"/></td>
-        </tr>
-        <tr>
-          <td>Size</td>
-          <td><input name="size" type="text" id="size" value="<?php echo $size; ?>"/></td>
-        </tr>
-        <tr>
-          <td>&nbsp;</td>
-          <td>
-          <input name="thisID" type="hidden" value="<?php echo $targetID; ?>" />
-          <input type="submit" name="button" id="button" value="Update Item" /></td>
-        </tr>
-      
-      </table>
-      </form>
+            <td>Name</td>
+            <td><input name="product_name" type="text" id="product_name" value="<?php echo $product_name; ?>"/></td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td><textarea name="description" id="description" cols="32" rows="3"><?php echo $description; ?></textarea></td>
+          </tr>
+          <tr>
+            <td>Category</td>
+            <td><input name="category" type="text" id="category" value="<?php echo $category; ?>"/></td>
+          </tr>
+          <tr>
+            <td>SKU</td>
+            <td><input name="sku" type="text" id="sku" value="<?php echo $sku; ?>"/></td>
+          </tr>
+          <tr>
+            <td>Stock</td>
+            <td><input name="stock" type="text" id="stock" value="<?php echo $stock; ?>"/></td>
+          </tr>
+          <tr>
+            <td>Cost</td>
+            <td><input name="cost" type="number" id="cost" value="<?php echo $cost; ?>"/></td>
+          </tr>
+          <tr>
+            <td>Price</td>
+            <td><input name="price" type="number" id="price" value="<?php echo $price; ?>"/></td>
+          </tr>
+          <tr>
+            <td>Image</td>
+            <td><input type="file" name="fileField" id="fileField" /></td>
+          </tr>
+          <tr>
+            <td>Weight</td>
+            <td><input name="weight" type="text" id="weight" value="<?php echo $weight; ?>"/></td>
+          </tr>
+          <tr>
+            <td>Size</td>
+            <td><input name="size" type="text" id="size" value="<?php echo $size; ?>"/></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td>
+            <input name="thisID" type="hidden" value="<?php echo $targetID; ?>" />
+            <input type="submit" name="button" id="button" value="Update Item" /></td>
+          </tr>
+        
+        </table>
+        </form>
+      </div>
     </div>
   </div>
 </div>

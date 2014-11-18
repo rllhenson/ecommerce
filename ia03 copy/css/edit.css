@@ -1329,6 +1329,9 @@ td form input[type="text"]{
 	text-shadow: 2px 1px 4px #32373a;
 	opacity: .5;
 }	
+#admincontent td{
+  
+}
 #admincontent button{
 	margin-left: 2.5%;
 	margin-top: 5%;
