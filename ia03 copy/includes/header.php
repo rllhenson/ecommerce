@@ -65,5 +65,6 @@
 				<li><a href="catalog.php">catalog</a></li>
 				<li class="contact" ><a href="contact.php">contact</a></li>
 			</ul>
-
 		</div>
+
+		
