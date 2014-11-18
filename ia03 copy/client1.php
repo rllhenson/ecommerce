@@ -6,9 +6,7 @@
 	// $clientuser=$_SESSION['clientuser'];
 	
 	// session_start(); 
-
 	// include 'includes/google_analytics_tracking.js';
-
 
 	error_reporting(E_ALL);
 
@@ -50,9 +48,7 @@
 					<form method="post" action="client.php">
 						<input type="submit" name="edit_client" value="Edit Information">
 					</form>
-					<!-- <a href="includes/logout.php"><button type="button" id="logout_client">Logout</button></a> -->
-					<button type="button" id="logout_client" onclick="location.href='http://sulley.cah.ucf.edu/~ra072140/dig4530c_group04/A/includes/logout.php'">Logout</button>
-					
+					<a href="includes/logout.php"><button type="button" id="logout_client">Logout</button></a>
 					<?php
 					}else if($_POST['edit_client']=='Edit Information'){
 						$myquery = "SELECT * FROM priv_users WHERE userid=".$_SESSION['clientid']."";
@@ -129,7 +125,7 @@
 							<input type="submit" name="edit_client" value="Edit Information">
 						</form>
 						<!-- <a href="includes/logout.php"><button type="button" id="logout_client">Logout</button></a> -->
-						<button type="button" id="logout_client" onclick="location.href='http://sulley.cah.ucf.edu/~ra072140/dig4530c_group04/A/includes/logout.php'">Logout</button>
+						<button type="button" id="logout_client" onclick="location.href='http://http://sulley.cah.ucf.edu/~ra072140/dig4530c_group04/A/includes/logout.php'">Logout</button>
 
 
 					<?php
@@ -164,7 +160,7 @@
 							<input type="submit" name="edit_client" value="Edit Information">
 						</form>
 						<!-- <a href="includes/logout.php"><button type="button" id="logout_client">Logout</button></a> -->
-						<button type="button" id="logout_client" onclick="location.href='http://sulley.cah.ucf.edu/~ra072140/dig4530c_group04/A/includes/logout.php'">Logout</button>
+						<button type="button" id="logout_client" onclick="location.href='http://http://sulley.cah.ucf.edu/~ra072140/dig4530c_group04/A/includes/logout.php'">Logout</button>
 					
 
 					<?php
