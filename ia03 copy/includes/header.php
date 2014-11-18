@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="css/reset.css"/>
 	<link rel="stylesheet" href="css/styles.css"/>
 	<script type="text/javascript" src="js/process_form.js"></script>
+    <script type="text/javascript" src="js/google_analytics_tracking.js"></script>
 </head>
 
 <body>
