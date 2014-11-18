@@ -12,7 +12,7 @@
 				<div id="topbar">
     		 
     			<div id="textbox">
-			        <form method="post" action="client.php">             
+			        <form method="post" action="includes/valid.php">             
 			            <input type="text" name="fname" placeholder="First Name" />
 			            <input type="text" name="lname" placeholder="Last Name" />
 			            <input type="text" name="address" placeholder="Address" />

@@ -16,8 +16,10 @@
 				<div id="clientDesc">
 					<?php
 
+					// print_r($_SESSION);
+
 					if(!isset($_POST['edit_client'])){
-						$myquery = "SELECT * FROM priv_users WHERE userid=".$_SESSION['id']."";
+						$myquery = "SELECT * FROM priv_users WHERE userid=".$_SESSION['clientid']."";
 					  	$result=$mysqli->query($myquery)
 					    	or die ($mysqli->error);
 						while($row=$result->fetch_assoc()){
@@ -47,7 +49,7 @@
 					<a href="includes/logout.php"><button type="button" id="logout_client">Logout</button></a>
 					<?php
 					}else if($_POST['edit_client']=='Edit Information'){
-						$myquery = "SELECT * FROM priv_users WHERE userid=".$_SESSION['id']."";
+						$myquery = "SELECT * FROM priv_users WHERE userid=".$_SESSION['clientid']."";
 					  	$result=$mysqli->query($myquery)
 					    	or die ($mysqli->error);
 						while($row=$result->fetch_assoc()){
@@ -99,7 +101,7 @@
 						$email=$mysqli->real_escape_string($emailX);
 
 						// The 'null' in the VALUES list allows the auto-incrementing idnumber to work
-						$query="UPDATE priv_users SET fname='$fname', lname='$lname', address='$address', city='$city', state='$state', zipcode='$zip', email='$email' WHERE userid=".$_SESSION['id']."";
+						$query="UPDATE priv_users SET fname='$fname', lname='$lname', address='$address', city='$city', state='$state', zipcode='$zip', email='$email' WHERE userid=".$_SESSION['clientid']."";
 						//WHERE course LIKE '$courses%
 
 						$result=$mysqli->query($query)
@@ -127,7 +129,7 @@
 					<?php
 					}else if ($_POST['edit_client']=='Cancel'){
 
-						$myquery = "SELECT * FROM priv_users WHERE userid=".$_SESSION['id']."";
+						$myquery = "SELECT * FROM priv_users WHERE userid=".$_SESSION['clientid']."";
 					  	$result=$mysqli->query($myquery)
 					    	or die ($mysqli->error);
 						while($row=$result->fetch_assoc()){

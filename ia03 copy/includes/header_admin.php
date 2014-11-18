@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<!--<?php //session_start(); ?>-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,6 +25,7 @@
 		<div class="log_search">
 			<div class="log">
 				<a href="?logout"><h4>logout</h4></a>
+				<!-- <a href="../includes/logoutAdmin.php"><h4>logout</h4></a> -->
 			</div>
 		</div>
 	</div>

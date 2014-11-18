@@ -1,7 +1,7 @@
 <?php 
 $pageTitle='FloorFive Admin Log In';
 include '../includes/header_admin.php';
-// session_start();
+session_start();
 if (!isset($_SESSION["adminuser"])) {
     header("location: admin_login.php"); 
     exit();
@@ -24,7 +24,7 @@ if ($count == 0) {
 if(isset($_GET['logout'])) {
 unset($_SESSION["adminsuser"]); 
 setcookie($_COOKIE['adminuser'],'',time()-3600);
-// session_destroy();
+session_destroy();
 header('Location: ../home.php');
 exit;
 }
