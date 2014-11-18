@@ -1385,6 +1385,7 @@ td form input[type="text"]{
 }
 #productTable td, #productTable th{
   padding: 5px 10px 5px 0;
+  font-family: 'Poiret One', cursive;
 }
 #orders{
 	padding: 1%;
