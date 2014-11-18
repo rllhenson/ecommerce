@@ -114,23 +114,6 @@ if (isset($_POST['product_name'])) {
     or die ($mysqli->error);
   
 }
-  /*
-	$sql = mysql_query("SELECT id FROM products WHERE product_name='$product_name' LIMIT 1");
-	$productMatch = mysql_num_rows($sql); // count the output amount
-    if ($productMatch > 0) {
-		echo 'Sorry you tried to place a duplicate "Product Name" into the system, <a href="inventory_list.php">click here</a>';
-		exit();
-	}
-	// Add this product into the database now
-	$sql = mysql_query("INSERT INTO products (product_name, price, details, category, subcategory, date_added) 
-        VALUES('$product_name','$price','$details','$category','$subcategory',now())") or die (mysql_error());
-     $pid = mysql_insert_id();
-	// Place image in the folder 
-	$newname = "$pid.jpg";
-	move_uploaded_file( $_FILES['fileField']['tmp_name'], "../img/$newname");
-	header("location: inventory_list.php"); 
-    exit();
-}*/
 ?>
 <?php 
 // This block grabs the whole list for viewing
@@ -168,16 +151,16 @@ exit;
 }
 ?>
 
-  <div class="cartimage">
-		<div id="cartcontent">
+  <div class="adminimage">
+		<div id="admincontent">
     <a href="inventory_list.php#inventoryForm">+ Add New Inventory Item</a>
-    <div align="left" style="margin-left:24px;">
+    <div>
       <h2>Inventory list</h2>
       <?php echo $product_list; ?>
     </div>
     <hr />
     <a name="inventoryForm" id="inventoryForm"></a>
-    <h2>&darr; Add New Inventory Item Form &darr;</h2>
+    <h2>Add New Inventory Item Form</h2>
       <form id="addProduct" action="inventory_list.php" enctype="multipart/form-data" name="myForm" id="myform" method="post">
       <table>
         <tr>
@@ -186,7 +169,7 @@ exit;
         </tr>
         <tr>
           <td>Description</td>
-          <td><textarea name="description" id="description" cols="32" rows="3"></textarea></td>
+          <td><textarea name="description" id="description" cols="32" rows="1"></textarea></td>
         </tr>
         <tr>
           <td>Category</td>
@@ -229,4 +212,6 @@ exit;
     </div>
   </div>
 </div>
-<?php include("../includes/footer_admin.php");?>
+
+<?php include_once("../includes/footer_admin.php");?>
+
